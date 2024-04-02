@@ -1,0 +1,35 @@
+
+@startuml Wire5.1_2
+!pragma layout smetana
+
+skinparam DefaultTextAlignment right
+skinparam RoundCorner 15
+
+<style>
+
+componentDiagram {
+  BackgroundColor #CAF0F8
+  FontColor black
+}
+
+document {
+  BackGroundColor #0077B6/#00B4D8
+}
+
+title {
+  BackGroundColor #66ACFF
+  BorderColor black
+  BorderThickness 1
+  RoundCorner 1
+}
+
+</style>
+title "\t\t\t\t\t\t\t\t\t__<b>NAV BAR__\t\t\t\t\t<i>__Nome de utilizador__ <&person>\n<i>__Logout__ <&account-login>"
+
+rectangle "\n\n\n\n\n\n\t\t<size:30><b>  Deseja submeter?  \t\t\n\n\n\n\n" {
+  rectangle "\tX\t" as wrong #808080
+  rectangle "\tV\t" as right #808080
+  wrong -[hidden]> right : "\t"
+}
+
+@enduml

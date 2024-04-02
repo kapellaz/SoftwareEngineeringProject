@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    <title>Registar</title>
+    <meta charset="UTF-8">
+	<meta content="width-device-width,initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{% static 'users/register.css' %}?{% now 'U' %}">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+    <main>
+        <form class='divRegister' method="POST">
+        {% csrf_token %}
+        <section class="registerContainer">
+            <h1 class="title">Bem vindo ao Kahuc!</h1>
+            <section class="Inputs">
+                <section class="nameInputs">
+                    {{ form.first_name }}
+                    {{ form.last_name }}
+                </section>
+                <section class="space"></section>
+                {{form.username}}
+                <section class="space"></section>
+                {{form.password1}}
+                <section class="space"></section>
+                {{form.password2}}
+                <section class="space"></section>
+                <section class="space"></section>
+
+                <section class="buttonSection">
+                    <input class="registarButton" type="submit" value="Registar">
+                </section>
+                <section class="finalText">
+                    <p class="textAccount">
+                        Já tem uma conta?
+                        <a href="{% url 'login' %}" class="logIn">
+                            Entrar
+                        </a>
+                    </p>
+                </section>
+            </section>
+        </section>
+        <section class="errors">
+            {% for message in messages %}
+            <div class="container">
+                <div class="error_div">
+                    {{ message }}
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+
+    </form>
+    </main>
+
+<script>
+    let input_fields = document.getElementsByTagName('input');
+    input_fields[1].placeholder = 'Primeiro Nome';
+    input_fields[2].placeholder = 'Último Nome';
+    input_fields[3].placeholder = 'Email';
+    input_fields[3].className = 'inputLong';
+    input_fields[4].placeholder = 'Palavra-passe';
+    input_fields[4].className = 'inputLong';
+    input_fields[5].placeholder = 'Confirmação de palavra-passe';
+    input_fields[5].className = 'inputLong';
+</script>
+</body>
+
+</html>
+
+<!--
+inputLong
+<form method="POST">
+    {% csrf_token %}
+
+    <div>
+        {{ form.first_name }}
+        {{ form.last_name }}
+    </div>
+    <div>
+        {{ form.username }}
+    </div>
+    <div>
+        {{ form.password1 }}
+    </div>
+    <div>
+        {{ form.password2 }}
+    </div>
+    <input type="submit" value="Registar">
+    <div>
+        <a>Já possui uma conta?<a href="http://127.0.0.1:8000/users/login/">Inicie Sessão</a></a>
+    </div>
+
+    {% for message in messages %}
+    <div>
+        {{ message }}
+    </div>
+    {% endfor %}
+</form>
+<script>
+    let input_fields = document.getElementsByTagName('input');
+    input_fields[1].placeholder = 'Primeiro Nome';
+    input_fields[2].placeholder = 'Último Nome';
+    input_fields[3].placeholder = 'Email';
+    input_fields[4].placeholder = 'Palavra-passe';
+    input_fields[5].placeholder = 'Confirmação de palavra-passe';
+</script>
+-->

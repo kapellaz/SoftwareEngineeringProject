@@ -1,0 +1,81 @@
+
+@startuml Wire6.2
+!pragma layout smetana
+
+skinparam DefaultTextAlignment right
+skinparam RoundCorner 15
+
+<style>
+
+componentDiagram {
+  BackgroundColor #03045E
+  FontColor black
+}
+
+document {
+  BackGroundColor #0077B6/#00B4D8
+}
+
+title {
+  BackGroundColor #66ACFF
+  BorderColor black
+  BorderThickness 1
+  RoundCorner 1
+}
+
+</style>
+
+title "\t\t\t\t\t\t\t\t\t  __<b>NAV BAR__\t\t\t\t\t<i>__Nome de utilizador__ <&person>\n<i>__Logout__ <&account-login>"
+rectangle "\n\t\t\t\t\tPergunta\t\t\t\t\t\n" as Question #CAF0F8
+rectangle "\n\t\tDescrição da pergunta (opcional):\t\t\n" as Description #CAF0F8
+rectangle "\t\t\tOpção 1\t\t\t" as Op1 #CAF0F8
+rectangle " F " as False1 #808080
+rectangle "\t\t\tOpção 2\t\t\t" as Op2 #CAF0F8
+rectangle " F " as False2 #808080
+rectangle "\t\t\t\t   Justificação   \t\t\t\t" as J1 #CAF0F8
+rectangle "\t\t\t\t   Justificação   \t\t\t\t" as J2 #CAF0F8
+
+rectangle "\t\t\tOpção 3\t\t\t" as Op3 #CAF0F8
+rectangle " V " as True1 #DDDDDD
+rectangle "\t\t\tOpção 4\t\t\t" as Op4 #CAF0F8
+rectangle " F " as False3 #808080
+rectangle "\t\t\t\t   Justificação   \t\t\t\t" as J3 #CAF0F8
+rectangle "\t\t\t\t   Justificação   \t\t\t\t" as J4 #CAF0F8
+
+rectangle "\t\t\tOpção 5\t\t\t" as Op5 #CAF0F8
+rectangle " F " as False4 #808080
+rectangle "\t\t\tOpção 6\t\t\t" as Op6 #CAF0F8
+rectangle " F " as False5 #808080
+rectangle "\t\t\t\t   Justificação   \t\t\t\t" as J5 #CAF0F8
+rectangle "\t\t\t\t   Justificação   \t\t\t\t" as J6 #CAF0F8
+
+rectangle "\t\tEditar\t\t" as Edit #text:white
+
+Question -[hidden]right-> Description
+Description -[hidden]down-> Op2
+
+Op2 -[hidden]right-> False2 : " "
+Op2 -[hidden]left-> False1 : "\t\t\t\t"
+False1 -[hidden]left-> Op1 : " "
+Op2 -[hidden]down-> J2
+J2 -[hidden]left-> J1
+
+J2 -[hidden]->Op4
+
+Op4 -[hidden]right-> False3 : " "
+Op4 -[hidden]left-> True1 : "\t\t\t\t"
+True1 -[hidden]left-> Op3 : " "
+Op4 -[hidden]down-> J4
+J4 -[hidden]left-> J3
+
+
+J4 -[hidden]->Op6
+
+Op6 -[hidden]right-> False5 : " "
+Op6 -[hidden]left-> False4 : "\t\t\t\t"
+False4 -[hidden]left-> Op5 : " "
+Op6 -[hidden]down-> J6
+J6 -[hidden]left-> J5
+
+J6 -[hidden]-> Edit
+@enduml

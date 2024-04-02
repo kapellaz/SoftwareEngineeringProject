@@ -1,0 +1,28 @@
+
+@startuml Wire1.1_2
+!pragma layout smetana
+
+skinparam DefaultTextAlignment right
+skinparam RectangleBorderColor black
+skinparam RoundCorner 15
+
+skinparam titleBorderRoundCorner 1
+skinparam titleBorderThickness 1
+skinparam titleBorderColor #DDDDDD
+skinparam titleBackgroundColor #DDDDDD
+title "\t\t\t\t\t\t\t\t\t\t\t__<b>NAV BAR__\t\t\t\t\t\t\t<i>__Registar__ <&person>\n<i>__Login__ <&person>"
+
+<style>
+componentDiagram {
+  BackGroundColor palewhite
+  LineThickness 0.4
+  
+}
+
+</style>
+
+rectangle "\n\n\n\n\n\n\n\n\n**Está quase!** \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" as first #line:white
+rectangle "Irás receber um link no teu email para confirmar o registo! \t\t\t\t\t\t\t\t\t" as second #line:white
+
+
+first -[hidden]-> second

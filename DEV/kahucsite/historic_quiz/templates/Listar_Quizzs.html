@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+  <head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="{% static 'historic_quiz/styles.css' %}" rel="stylesheet">
+
+    <title>Histórico de Quizzes</title>
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+  <div class="offset-1 col-10 list-div">
+
+          <div class="toptitle">
+              <h1>OS MEUS QUIZZES</h1>
+          </div>
+          {% if quizzs %}
+            {% for quiz in quizzs %}
+            <li class="quiz-item">
+
+              <span><a style ="color: black" href="/historic_quiz/quiz={{ quiz.id}}">Quizz #{{ quiz.id}} {{quiz.description}}</a></span>
+              <span class="estado">{{quiz.approval_state}}</span>
+
+
+            </li>
+            {% endfor %}
+          {% else %}
+          <div class="">
+            <h2>Não tem quizzes!!</h2>
+          </div>
+          {% endif %}
+
+        </ul>
+      </div>
+    </div>
+    <script src="{% static 'historic_quiz/scripts.js' %}"></script>
+  </body>
+</html>

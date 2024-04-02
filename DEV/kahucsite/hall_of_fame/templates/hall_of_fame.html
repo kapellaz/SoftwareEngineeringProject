@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hall of Fame</title>
+
+    <link href="{% static 'hall_of_fame.css' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+    <div class="toptitle">
+        <h1>HALL OF FAME</h1>
+    </div>
+
+    <!-- Selecionar tipo de hall of fame -> quizzes ou testes -->
+    <div class="select_mode">
+
+        <a href="/halloffame/quiz">
+            <button class="buttons"
+            {% if not isTestHF %}
+                disabled
+            {% endif %}
+
+            >Quizzes</button>
+        </a>
+        <a href="/halloffame/test">
+            <button class="buttons"
+            {% if isTestHF %}
+                disabled
+            {% endif %}
+            
+            >Testes</button>
+        </a>
+
+        <!-- filtrar por uma tag -->
+        <form
+        {% if not isTestHF %}
+            action="/halloffame/quiz"
+        {% else %}
+            action="/halloffame/test"
+        {% endif %}
+        
+        method="get">
+
+            <select id="tags" name="tags" class="tag_list">
+                <option value="ALL">ALL</option>
+                {% for tag in tags %}
+                    <option value="{{ tag }}" {% if tag_id == forloop.counter %}selected{% endif %}>{{ tag }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Filtrar">
+        </form>
+
+    </div>
+
+
+    {% if not exist_ans %}
+
+        <div class="exist_ans">
+        {% if isTestHF %}
+
+            <p>Não existem testes completados com a tag selecionada.</p>
+                
+        {% else %}
+                
+            <p>Não existem quizzes corretos com a tag selecionada.</p>
+                
+        {% endif %}
+        </div>
+
+    {% else %}
+
+    <!-- Tabela de rankings -->
+     <table table style="margin-left:auto; margin-right:auto; text-align:center;"border="10">
+        <tr>
+            <th class="table_header">Username</th>
+            <th class="table_header">
+
+                {% if isTestHF %}
+                    Nº de testes completados
+                {% else %}
+                    Nº quizzes acertados
+                {% endif %}
+
+            </th>
+        </tr>
+
+        <!-- Iterar por cada user para adicionar rows à tabela -->
+        {% if not isTestHF %}
+
+            {% for user, answer in users_answers %}
+
+            <!-- Iterar por cada user para adicionar o username e depois o numero de respostas -->
+            <tr>
+                <td>{{ user }}</td>
+                <td>{{ answer }}</td>
+            </tr>
+                
+            {% endfor %}
+
+        {% else %}
+
+            {% for user, answer in users_completed %}
+            <tr>
+
+                <td>{{ user }}</td>
+                <td>{{ answer }}</td>
+
+            </tr>
+            {% endfor %}
+
+        {% endif %}
+    </table>
+
+    {% endif %}
+
+</main>
+
+
+</body>
+</html>

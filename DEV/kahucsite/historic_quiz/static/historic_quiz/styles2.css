@@ -1,0 +1,361 @@
+
+body{
+  color: white;
+}
+
+.toptitle {
+    max-width: 300px;
+}
+
+
+[type="submit"], button {
+    width: 10vw;
+    background: #03045E;
+    border-radius: 22px;
+    border-color: #03045E;
+    border-style: solid;
+    font-weight: bolder;
+    font-size: 1vw;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+[type="submit"]:hover, button:hover {
+    border-color: #66ACFF;
+    background-color: #66ACFF;
+    transition-duration: 1000ms;
+    cursor: pointer;
+}
+
+dialog {
+  border-radius: 15px;
+  border: 0;
+  max-width: 90%;
+
+}
+
+
+::backdrop {
+    backdrop-filter: blur(4px);
+}
+
+textarea {
+    resize: none;
+}
+
+.toptitle {
+  color: black;
+    background: rgba(255, 255, 255, .9);
+    border-radius: 15px;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+    border-radius: 15px;
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+
+.toptitle h1 {
+    margin-top: 10px;
+    font-family: monocode, sans-serif;
+    font-size: 2em;
+}
+ .userdiv {
+    position: relative;
+    display: inline-block;
+}
+
+.Username {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.userMenu {
+    position: absolute;
+    display: none;
+    min-width: 10%;
+    z-index: 1;
+    padding:  7px 15px 10px 25px;
+}
+
+.as {
+    color: white;
+    padding-top: 1%;
+    text-decoration: none;
+    display: block;
+    padding-bottom: 2px;
+
+}
+
+
+.as:hover {
+    color: #66ACFF;
+    transition-duration: 1000ms;
+}
+
+.userdiv:hover .userMenu {
+   display: block;
+}
+
+.userdiv:hover .Username {
+    color: #66ACFF;
+    transition-duration: 1000ms;
+}
+
+
+
+
+/* caixas de texto*/
+input {
+  width: 50%;
+}
+
+input[type=text] {
+  height: 1cm;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+input[type=text]:focus {
+  background-color: #CAF0F8;
+}
+
+/* butões */
+input[type=button], input[type=submit], input[type=reset],button {
+  margin-inline: 10px;
+}
+
+  .btnbtn--main{
+    width: 20%;
+    background-color: #03045E;
+    border: none;
+    padding: 16px 32px;
+    color: white;
+    margin: 15px 14.5%;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius:20px;
+    font-size: large;
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+  }
+
+
+  /* Verdadeiros e falsos */
+  .valor1{
+    margin-top: 4%;
+  }
+
+
+  /* items à esquerda */
+  .left{
+  margin-top: 1%;
+  margin-left: 2%;
+  float: left;
+  width: 45%;
+  }
+
+  /* items à direita */
+  .right {
+  margin-top: 1%;
+  margin-right: 2%;
+  float: right;
+  width: 45%;
+  }
+
+
+  .popup_submeter{
+  display: none;
+  }
+
+  .popup_cancelar{
+  display: none;
+
+  }
+
+  /* caracteristicas dos popups */
+  .popup,
+  .popup2 {
+    text-align: center;
+  }
+
+  .popup2-close,
+.popup-close,
+.popup2-open,
+.submit {
+  margin: 5px;
+}
+
+  
+
+  .popup-footer{
+    display: flex;
+
+    justify-content: space-between;
+
+  }
+
+
+  .popup_tags{
+    
+    
+    background: #0077B6;
+    width: 50%;
+    color: white;
+    border-radius: 20px;
+    border: 3px solid rgb(0, 0, 0);
+    
+    }
+
+  .popup-header{
+    text-align: center;
+    margin-bottom: 3%;
+    font-size: 30px;
+  }
+  .popup-body-item{
+    text-align: left;
+    height: 1cm;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 7px 0;
+    box-sizing: border-box;
+    color: #000;
+    background-color: #90E0EF;
+    border: 2px solid black;
+    border-radius: 15px;
+  }
+  .revisor{
+    margin-right: 3%;
+  }
+  
+
+
+  /* ativação dos popups */
+  .active{
+  display: flex;
+  }
+
+  .active2{
+  display: flex;
+  }
+
+
+
+  /* opções de v e f */
+
+  .opc {
+    float: left;
+  width: 85%;
+    }
+
+
+  .just{
+  float: left;
+  width: 90%;
+  }
+  .popup-open{
+    margin-top: 6%;
+    margin-left: 2%;
+  }
+  #img{
+    margin-left:2%;
+    margin-top:5%
+  }
+
+  /* blur de fundo nos popups */
+  .blur   {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  }
+
+  /* mensagens de erro dos v e f */
+  .error{
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.7cm;
+  float: left;
+  width: 100%;
+
+  }
+
+
+  
+  .popup2-close,
+.popup-close,
+.popup2-open,
+.submit {
+  margin: 5px;
+}
+
+  .cancelar{
+    margin: auto;
+  }
+  
+  .tags{
+    width: 85%;
+    display: inline-block;
+    margin-left: 5%;
+    margin-bottom: 5%;
+  }
+  
+  .tag_solo{
+    display: flex;
+    margin-top: 1%;
+  
+  }
+  
+  
+  .tag_label{
+    margin-top: 1%;
+  }
+
+  input[type=radio]{
+    height: 1.1em;
+    width: 7%;
+  }
+  
+  .button_edit{  
+    text-align: center;
+    margin: auto;
+    align-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.btns_{
+  text-align: center;
+  margin: auto;
+  align-content: center;
+  align-items: center;
+  margin-top: 25px;
+
+}
+
+input[type=radio]{
+  height: 1.1em;
+  width: 7%;
+}
+

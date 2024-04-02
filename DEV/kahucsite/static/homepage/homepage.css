@@ -1,0 +1,250 @@
+*{
+    color: white;
+}
+
+.angry-grid {
+   display: grid; 
+
+   grid-template-rows: 0.6fr 1fr 1fr 1fr 1fr;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   
+   gap: 0px;
+   height: 100%;
+   
+}
+
+
+.img{
+    width: 30%;
+    vertical-align: middle;
+}
+
+.message{
+    font-size: 30px;
+    margin-left: 5%;
+    text-shadow: #000 2px 3px 2px;
+
+}
+.image{
+    margin-top: 5%;
+    margin-left: 2%;
+    width: 75%;
+}
+
+
+
+.image_crown{
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.ranking{
+    text-align: center;
+    position: relative;
+}
+
+.image_medals{
+    width: 7%;
+    position: absolute;
+}
+
+.title_rank{
+    font-size: 20px;
+    text-align:center;
+    font-weight: bold;
+    
+}
+
+
+
+.border_buttons{
+   cursor: pointer;
+    background-image: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%);
+    border-radius: 20px;
+    min-width: 80%;
+    max-width: 80%;
+    max-height: 80%;
+    min-height: 80%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 100%;
+}
+.txt{
+    
+    font-weight: bold;
+}
+
+.img_size{
+   
+    width: 27%;
+    vertical-align: middle;
+
+}
+
+
+.button_rank{
+    margin-top: 20%;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.button_hist{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#item-0 {
+
+   background-image: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+   grid-row-start: 1;
+   grid-column-start: 7;
+
+   grid-row-end: 2;
+   grid-column-end: 8;
+   
+}
+#item-1 {
+
+    background-image: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0; 
+   grid-row-start: 1;
+   grid-column-start: 8;
+
+   grid-row-end: 2;
+   grid-column-end: 9;
+   
+}
+#item-2 {
+
+    background-image: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0; 
+   grid-row-start: 1;
+   grid-column-start: 1;
+
+   grid-row-end: 5;
+   grid-column-end: 7;
+   
+}
+#item-3 {
+
+    background-image: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+   grid-row-start: 2;
+   grid-column-start: 7;
+
+   grid-row-end: 6;
+   grid-column-end: 9;
+
+   display: block;
+
+   
+}
+#item-4 {
+
+    background-image: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0; 
+   grid-row-start: 5;
+   grid-column-start: 1;
+
+   grid-row-end: 6;
+   grid-column-end: 3;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+#item-5 {
+
+    background-image: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+   grid-row-start: 5;
+   grid-column-start: 3;
+
+   grid-row-end: 6;
+   grid-column-end: 5;
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+#item-6 {
+
+    background-image: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0; 
+   grid-row-start: 5;
+   grid-column-start: 5;
+
+   grid-row-end: 6;
+   grid-column-end: 7;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   
+}
+/* width */
+::-webkit-scrollbar {
+    background: #66ACFF;
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #0077B6;
+    border-radius: 5px;
+  }
+  .create_menu{
+      position: relative;
+      text-align: center;
+  }
+dialog p{
+      color: black;
+  }
+  #close-pop-up{
+      margin: auto;
+      margin-top: 20px;
+      display: block;
+  }
+  .state{
+      margin-top: 10px;
+      border: none;
+      background: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%) fixed;
+
+  }

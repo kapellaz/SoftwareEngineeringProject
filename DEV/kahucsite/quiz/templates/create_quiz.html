@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <title>Criar quiz</title>
+    {% load static %}
+    <meta charset="UTF-8">
+	<meta content="width-device-width,initial-scale=1.0" name="viewport">
+    <link href="{% static 'quiz/style.css' %}?{% now 'U' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+
+  <div class="toptitle">
+        <h1>Criar Quiz</h1>
+  </div>
+
+  <!-- Pergunta / descriçao / todas as 6 alineas -->
+    <form action="/createquiz/" method="POST">
+      {% csrf_token %}
+      <div id='main_container'>
+
+        <!-- pergunta -->
+        <div class="left">
+          <label > Pergunta: </label>
+          {{ form.question }}
+        </div>
+
+        <!-- descição opcional -->
+        <div class="right" rows="2">
+          <label > Descrição da pergunta (opcional):</label>
+          {{ form.description }}
+        </div>
+
+        <!-- opções -->
+        <div class="left">
+          <div class='opc'>
+            <label > Opção 1:</label>
+            {{ form.answer1 }}
+          </div>
+          <div class="valor1">
+            {{form.option1}}
+          </div><br>
+          <label > Justificação 1:</label>
+          {{ form.reason1 }}
+        </div>
+
+        <div class="right">
+          <div class='opc'>
+            <label > Opção 2:</label>
+            {{ form.answer2 }}
+          </div>
+          <div class="valor1">
+            {{form.option2}}
+          </div><br>
+          <label > Justificação 2:</label>
+          {{ form.reason2 }}
+        </div>
+
+        <div class="left">
+          <div class='opc'>
+            <label > Opção 3:</label>
+            {{ form.answer3 }}
+          </div>
+          <div class="valor1">
+            {{form.option3}}
+          </div><br>
+          <label > Justificação 3:</label>
+          {{ form.reason3 }}
+        </div>
+
+        <div class="right">
+          <div class='opc'>
+            <label > Opção 4:</label>
+            {{ form.answer4 }}
+          </div>
+          <div class="valor1">
+            {{form.option4}}
+          </div><br>
+          <label > Justificação 4:</label>
+          {{ form.reason4 }}
+        </div>
+
+        <div class="left">
+          <div class='opc'>
+            <label > Opção 5:</label>
+            {{ form.answer5 }}
+          </div>
+          <div class="valor1">
+            {{form.option5}}
+          </div><br>
+          <label > Justificação 5:</label>
+          {{ form.reason5 }}
+        </div>
+
+        <div class="right">
+          <div class='opc'>
+            <label > Opção 6:</label>
+            {{ form.answer6 }}
+          </div>
+          <div class="valor1">
+            {{form.option6}}
+          </div><br>
+          <label > Justificação 6:</label>
+          {{ form.reason6 }}
+        </div>
+
+        <!-- Mensagem de erro do numero de opções verdadeiras e falsas -->
+        <div class = "error">
+          {% for error in errors %}
+              <p>{{error}}</p>
+          {% endfor %}
+        </div>
+
+        <div class="btns_">
+          <button class="Cancelar" onclick='openModal()' type='button'>Cancelar </button>
+          <button class="Submeter" onclick='openModal2()' type='button'>Submeter </button>
+          <button  type='button' onclick='openModal3()'>Tags </button>
+        </div>
+      </div>
+
+      <!-- pop-ups dos butões submeter, cancelar e das tags -->
+      <div id="overlay">
+
+        <dialog id='popup_submeter'>
+            <h2> Deseja Submeter? </h2>
+            <div class='btns'>
+              <button class="popup2-close" onclick="closeModal2()" type= 'button' >Fechar</button>
+              <button class='submit' onclick='closeModal2()' type="submit" value="Submeter">Submeter</button>
+            </div>
+        </dialog>
+
+        <dialog id='popup_cancelar'>
+            <h2> Deseja Cancelar? </h2>
+            <div class='btns'>
+              <button class="popup1-close" onclick="closeModal()" type= 'button' >✖ </button>
+              <button onclick="location.href = '/home/';" type= 'button'>✔ </button>
+            </div>
+        </dialog>
+          </div>
+        </div>
+        <dialog class='popup_tags'>
+          <div class='modal2'>
+            <h2 class='text'> Selecione a tag do quiz: </h2>
+            <div class='tags'>
+              {% for x in form.tag %}
+              <div class='tag_solo'>
+                {{x.tag}}
+                {{x.choice_label}}
+              </div>
+              {% endfor %}
+            </div>
+            <button class='cancelar' type= 'button' onclick="closeModal3()" >Fechar</button>
+          </div>
+        </dialog>
+      </div>
+    </form>
+</main>
+    <script src="{% static 'quiz/script.js' %}"></script>
+</body>
+
+</html>

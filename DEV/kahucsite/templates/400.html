@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <title>400 Bad Request</title>
+    <title>400 Mau Pedido</title>
+    <meta charset="UTF-8">
+	<meta content="width-device-width,initial-scale=1.0" name="viewport">
+    <link href="{% static 'codes/errors.css' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+    <div class="warning">
+        <p class="title">403</p>
+        <p class="text">Erro de mau pedido</p>
+    </div>
+</main>
+
+</body>
+</html>

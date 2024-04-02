@@ -1,0 +1,176 @@
+@import "fonts/Monocode.css";
+
+* {
+    font-family: Monocode, sans-serif;
+}
+
+html {
+    margin: auto;
+    min-width: 405px;
+    max-width: 1920px;
+    background: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%) fixed;
+}
+
+body {
+    overflow:auto;
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+nav {
+    margin: auto;
+    width: 95%;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.logo {
+    height: 70px;
+}
+
+.logo:hover {
+    transition-duration: 200ms;
+    opacity: .7;
+}
+
+.options {
+    display: flex;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.tt,.userdiv a {
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 2vw;
+    font-family: monospace;
+}
+
+.tt:hover,userdiv {
+    color: #66ACFF;
+    transition-duration: 200ms;
+}
+
+[type="submit"], button {
+    width: 10vw;
+    height: 5vh;
+    background: #03045E;
+    border-radius: 22px;
+    border-color: #03045E;
+    border-style: solid;
+    font-weight: bolder;
+    font-size: 1vw;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+[type="submit"]:hover, button:hover {
+    border-color: #66ACFF;
+    background-color: #66ACFF;
+    transition-duration: 1000ms;
+    cursor: pointer;
+}
+
+dialog {
+    text-align: center;
+    border-radius: 15px;
+    border: 0;
+    max-width: 90%;
+}
+
+::backdrop {
+    backdrop-filter: blur(4px);
+}
+
+textarea {
+    resize: none;
+}
+
+.toptitle {
+  color: black;
+    background: rgba(255, 255, 255, .9);
+    border-radius: 15px;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+    border-radius: 15px;
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+
+.toptitle h1 {
+    margin-top: 10px;
+    font-family: monocode, sans-serif;
+    font-size: 2em;
+}
+ .userdiv {
+    position: relative;
+    display: inline-block;
+}
+
+.Username {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.userMenu {
+    position: absolute;
+    display: none;
+    min-width: 10%;
+    z-index: 1;
+    padding:  7px 15px 10px 25px;
+}
+
+.as {
+    color: white;
+    padding-top: 1%;
+    text-decoration: none;
+    display: block;
+    padding-bottom: 2px;
+
+}
+
+
+.as:hover {
+    color: #66ACFF;
+    transition-duration: 1000ms;
+}
+
+.userdiv:hover .userMenu {
+   display: block;
+}
+
+.userdiv:hover .Username {
+    color: #66ACFF;
+    transition-duration: 1000ms;
+}
+
+/* width */
+::-webkit-scrollbar {
+    background: #66ACFF;
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #0077B6;
+    border-radius: 5px;
+  }

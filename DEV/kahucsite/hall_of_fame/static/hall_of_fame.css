@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.toptitle {
+    max-width: 400px;
+}
+
+table {
+    margin-top: 20px;
+    width: 1000px;
+    border-color: #508ce1;
+    color: white;
+    padding: 5px;
+}
+
+table tr{
+    font-size: 20px;
+    background-color: rgba(174, 211, 227, 0.65);
+}
+
+table td {
+    padding: 10px;
+}
+
+table td {
+    padding: 10px;
+}
+
+header button {
+    margin-left: 20px;
+    color: white;
+    padding: 9px 25px;
+    background-color: rgb(57, 90, 234);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+header button:hover {
+    background-color: rgba(57, 90, 234, 0.37);
+}
+
+.table_header {
+    background-color: rgba(36, 57, 150, 0.37);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+.select_mode{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons{
+
+    width: 10vw;
+    height: 5vh;
+    background: #03045E;
+    border-radius: 22px;
+    border-color:#03045E;
+    border-style: solid;
+
+    font-size: 1vw;
+    color: white;
+    justify-content: center;
+
+    padding:  10px 15px 10px 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    text-align: center;
+}
+
+.buttons:hover{
+    border-color:#66ACFF;
+    border-style: solid;
+    background-color: #66ACFF;
+    transition-duration: 1000ms;
+}
+
+.buttons:disabled{
+    border-color:#66ACFF;
+    background-color: #66ACFF;
+    cursor: default;
+}
+
+.tags_list{
+    background-color: #66ACFF;
+    border-color: #03045E;
+}
+
+.exist_ans{
+    padding: 70px 0;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 18px;
+}

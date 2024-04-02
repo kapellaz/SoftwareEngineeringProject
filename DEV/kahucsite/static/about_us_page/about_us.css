@@ -1,0 +1,36 @@
+.toptitle {
+    max-width: 300px;
+}
+
+
+.main-content {
+    width: 95%;
+    margin: auto;
+}
+
+.left, .right {
+    height: 100%;
+    padding: 20px;
+    background: linear-gradient(112.66deg, #164270 -14.13%, #165081 80%);
+    margin: auto;
+    color: white;
+    border-radius: 15px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.left {text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+table {
+    margin: auto;
+}
+
+td {
+    text-align: center;
+    margin: 5px;
+}

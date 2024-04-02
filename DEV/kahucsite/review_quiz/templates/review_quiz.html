@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+	<meta charset="UTF-8">
+	<meta content="width-device-width,initial-scale=1.0" name="viewport">
+
+	{% load static %}
+	 <link href="{% static 'global.css' %}" rel="stylesheet">
+	<link href="{% static 'review_quiz/style_review.css' %}" rel="stylesheet">
+	<title>Rever Quiz #{{quiz.id}}</title>
+
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+	<main>
+
+		<h1 class="review"> Review Quiz #{{quiz.id}}</h1>
+		<p class="question">{{quiz.question}}</p>
+		<form class="finalcomment" method="POST">
+			{% csrf_token %}
+
+			<div class="left">
+				{% for x in allOptions %}
+				<div class="answerComment" id="answerComment{{x.id}}">
+					<div class="answers">
+						<p class="option">{{x.text}}</p>
+
+						<div class="choice">
+							<img class="popup-open" id="img{{x.id}}" src="{% static 'review_quiz/popup.png' %}">
+
+							<p class="trueFalse">
+								{% if x.selection == True %}
+								T
+								{% else %}
+								F
+								{% endif %}
+							</p>
+						</div>
+
+					</div>
+					<dialog class="popup" id="justify{{x.id}}">
+						<div class="popup-header">
+							<p class="popup-title">Justificação da resposta</p>
+						</div>
+						<div class="popup-body">
+							{{x.justification}}
+						</div>
+						<div class="popup-footer">
+							<button class="popup-close" id="close{{x.id}}" type="button">Fechar</button>
+						</div>
+					</dialog>
+				</div>
+				{% endfor %}
+			</div>
+
+			<div class="right">
+				<div id="finalComment"></div>
+				<div id="final">
+					{{ form }}
+					<button class="popup2-open" id="sub2" type="button">Submeter</button>
+				</div>
+			</div>
+
+			<dialog class="popup2" id="popup">
+				<div class="content">
+					<div class="pop-header">
+						<p>Deseja concluir?</p>
+					</div>
+
+					<div class="btns">
+						<button class="popup2-close" type="button">Fechar</button>
+						<input class='submit' id="sub" type="submit" value="Submeter">
+					</div>
+				</div>
+			</dialog>
+
+		</form>
+
+	</main>
+
+</body>
+
+<script>
+
+	var open = document.getElementsByClassName("popup-open")
+	var close = document.getElementsByClassName("popup-close")
+	var modal = document.getElementsByClassName("popup")
+	const open2 = document.querySelector(".popup2-open")
+	const close2 = document.querySelector(".popup2-close")
+	const close3 = document.querySelector(".submit")
+	const modal2 = document.querySelector(".popup2")
+
+	var i
+
+	for (let i = 0; i < open.length; i++) {
+		open[i].onclick = function () {
+			modal[i].showModal()
+		}
+
+		close[i].onclick = function () {
+			modal[i].close()
+		}
+	}
+	open2.onclick = function () {
+		modal2.showModal()
+	}
+	close2.onclick = function () {
+		modal2.close()
+	}
+	close3.onclick = function () {
+		modal2.close()
+	}
+
+	var answerComments = document.getElementsByClassName("answerComment")
+	var comments = document.getElementsByClassName("new class name two")
+	var j, parent, child
+	for (let j = 0; j < comments.length; j++) {
+
+		child = document.getElementById(comments[j].id);
+
+		if (j == comments.length - 1) {
+			console.log(j)
+			parent = document.getElementById("finalComment");
+			parent.appendChild(child);
+		} else {
+			parent = document.getElementById(answerComments[j].id);
+			parent.appendChild(child);
+		}
+	}
+</script>
+
+</html>

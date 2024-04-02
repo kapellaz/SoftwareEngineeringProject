@@ -1,0 +1,54 @@
+@startuml
+skinparam DefaultTextAlignment right
+skinparam RectangleBorderColor black
+skinparam Margin 10
+skinparam RoundCorner 15
+
+skinparam titleBorderRoundCorner 1
+skinparam titleBorderThickness 1
+skinparam titleBorderColor #DDDDDD
+skinparam titleBackgroundColor #DDDDDD
+title "\t LOGO\t\t\tPágina inicial   Sobre Nós   Nome de utilizador"
+
+rectangle "Revisão do Quiz X" as RQ#FFF
+
+rectangle "<b>Pergunta" as Question#FFF
+
+rectangle " Opção1                                                                     Botao p/just.    V/F\n      \nComentário1:                                                                                              " as Op1#DDDDDD
+rectangle " Opção2                                                                     Botao p/just.    V/F\n      \nComentário2:                                                                                              " as Op2#DDDDDD
+rectangle " Opção3                                                                     Botao p/just.    V/F\n      \nComentário3:                                                                                              " as Op3#DDDDDD
+rectangle " Opção4                                                                     Botao p/just.    V/F\n      \nComentário4:                                                                                              " as Op4#DDDDDD
+rectangle " Opção5                                                                     Botao p/just.    V/F\n      \nComentário5:                                                                                              " as Op5#DDDDDD
+rectangle " Opção6                                                                     Botao p/just.    V/F\n      \nComentário6:                                                                                              " as Op6#DDDDDD
+
+rectangle "Comentário Geral:                                                                                 " as CG#FFF
+
+rectangle "Aprovado []    <b>Submeter" as final#FFF
+
+RQ-[hidden]-> Question
+Question-[hidden]-> Op1
+Op1-[hidden]->Op2
+Op2-[hidden]-> Op3
+Op3-[hidden]-> Op4
+Op4-[hidden]-> Op5
+Op5-[hidden]-> Op6
+Op6-[hidden]->CG
+CG-[hidden]->final
+
+
+<style>
+componentDiagram {
+  BackgroundColor #03045E
+  FontColor black
+}
+document {
+  BackGroundColor #0077B6/#00B4D8
+}
+title {
+  BackGroundColor #66ACFF
+  BorderColor black
+  BorderThickness 1
+  RoundCorner 1
+}
+</style>
+@enduml

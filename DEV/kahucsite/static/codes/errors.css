@@ -1,0 +1,22 @@
+.warning{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+
+}
+.title{
+    font-size: 23vh;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    padding-right: 4vw;
+}
+.text{
+    font-size: 1.5vw;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding-top: -1;
+}

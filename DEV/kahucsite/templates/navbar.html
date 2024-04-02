@@ -1,0 +1,39 @@
+{% load static %}
+
+<header>
+    
+    <nav>
+        <a href="/home/">
+            <img alt="Qries" class="logo" src="{% static 'logo/Smalllogo.png' %}">
+        </a>
+
+        <div class="options">
+
+            <a class="tt" href="/home/">
+                Página inicial
+            </a>
+            <a class="tt" href="/about_us/">
+                Sobre nós
+            </a>
+
+            {% if user.is_authenticated %}
+            <div class="userdiv">
+                <a class="Username">Olá, {{user.first_name}} {{user.last_name}}</a>
+                <div class="userMenu">
+                    <a class="as" href="/users/profile">Perfil</a>
+                    <a class="as" href="/users/logout/">Log Out</a>
+                </div>
+            </div>
+
+            {% else %}
+            <a class="tt" href="/users/register/">
+                Regista-te
+            </a>
+            <a class="tt" href="/users/login/">
+                Log In
+            </a>
+            {% endif %}
+        </div>
+    </nav>
+</header>
+

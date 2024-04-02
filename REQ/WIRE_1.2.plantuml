@@ -1,0 +1,39 @@
+
+@startuml Wire_1.2
+!pragma layout smetana
+
+skinparam DefaultTextAlignment left
+skinparam RectangleBorderColor black
+skinparam RoundCorner 15
+
+skinparam titleBorderRoundCorner 1
+skinparam titleBorderThickness 1
+skinparam titleBorderColor #DDDDDD
+skinparam titleBackgroundColor #DDDDDD
+title "\t\t\t\t\t\t\t\t\t\t\t__<b>NAV BAR__\t\t\t\t\t\t\t<i>__Registar__ <&person>
+
+<style>
+componentDiagram {
+  BackGroundColor palewhite
+  LineThickness 0.4
+  
+}
+
+</style>
+rectangle "**Bem-vindo à Kahuc!**  \nInicia sessão na tua conta para poderes criar, rever e resolver quizzes " as intro #line:white
+rectangle "\t\t\t\tEmail Institucional \t\t\t\t" as email
+rectangle "\t\t\t\\tPalavra-passe \t\t\t\t\t" as pass
+rectangle "\t\t\t\t\t**LOGIN** \t\t\t\t\t" as login
+rectangle "\t" as quadrado
+rectangle "Lembrar-me por 30 dias " as lembrar #line:white
+rectangle "__Esqueci-me da palavra-passe?__ " as esquecer #line:white
+rectangle "Ainda não tens conta? **Registar** " as registar #line:white
+
+intro -[hidden]-> email
+email -[hidden]-> pass
+pass -[hidden]-> login
+login -[hidden]-> lembrar
+lembrar -[hidden]left-> quadrado
+lembrar -[hidden]-> esquecer
+esquecer -[hidden]-> registar
+@enduml

@@ -1,0 +1,8 @@
+{% autoescape off %}
+Olá {{ user.username }},
+
+Obrigado por se registar na KahUC!
+Para terminar o seu registo por favor clique no link abaixo.
+
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}

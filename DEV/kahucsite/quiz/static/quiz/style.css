@@ -1,0 +1,136 @@
+body{
+  color: white;
+}
+
+.toptitle {
+    max-width: 300px;
+}
+
+/* caixas de texto*/
+input {
+  width: 50%;
+}
+
+input[type=text] {
+  height: 1cm;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+input[type=text]:focus {
+  background-color: #CAF0F8;
+}
+
+/* butões */
+input[type=button], input[type=submit], input[type=reset],button {
+  margin-inline: 10px;
+}
+
+/* Verdadeiros e falsos */
+.valor1{
+  margin-top: 4%;
+}
+
+
+/* items à esquerda */
+.left{
+margin-top: 1%;
+margin-left: 2%;
+float: left;
+width: 45%;
+}
+
+/* items à direita */
+.right{
+margin-top: 1%;
+margin-right: 2%;
+float: right;
+width: 45%;
+}
+
+
+/* opções de v e f */
+.opc{
+float: left;
+width: 85%;
+}
+
+/* blur de fundo nos popups */
+.blur   {
+filter: blur(5px);
+-webkit-filter: blur(5px);
+-moz-filter: blur(5px);
+-o-filter: blur(5px);
+-ms-filter: blur(5px);
+}
+
+/* mensagens de erro dos v e f */
+.error{
+text-align: center;
+font-weight: bold;
+font-size: 0.7cm;
+float: left;
+width: 100%;
+
+}
+.btns_{
+    text-align: center;
+    margin: auto;
+    align-content: center;
+    align-items: center;
+    margin-top: 25px;
+
+}
+
+.cancelar{
+  margin: auto;
+}
+
+.tags{
+  width: 85%;
+  display: inline-block;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.tag_solo{
+  display: flex;
+  margin-top: 1%;
+
+}
+
+
+.tag_label{
+  margin-top: 1%;
+}
+
+
+input[type=radio]{
+  height: 1.1em;
+  width: 7%;
+}
+/* width */
+::-webkit-scrollbar {
+  background: #66ACFF;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0077B6;
+  border-radius: 5px;
+}
+
+.buttons{
+  
+}

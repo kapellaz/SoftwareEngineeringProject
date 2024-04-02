@@ -1,0 +1,88 @@
+body{
+  background-color: linear-gradient(112.66deg, #03045E -14.13%, #0077B6 25.11%, #00B4D8 100%);
+}
+.navbarContainer{
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navBar{
+    display: flex;
+    flex-direction: row;
+    width: 35vw;
+    justify-content: space-around;
+  }
+  
+  .navElement{
+    
+    font-size: 1.2vw;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+  }
+  .navElement:hover{
+    color: #66ACFF;
+    font-size:1.2vw ;
+    transition-duration: 200ms;
+  } 
+.warning{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+
+}
+.title{
+    font-size: 23vh;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    padding-right: 4vw;
+}
+.text{
+    font-size: 1.5vw;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding-top: -1;
+}
+.header {
+  font-family: monocode, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2% 5% 2% 2%;
+}
+
+.options {
+  color: white;
+  display: flex;
+  position: relative;
+  right: 2px;
+
+}
+
+.tt {
+  font-size: 18px;
+  margin-left: 50px;
+  font-family: monospace;
+  text-decoration: none;
+  color: white;
+}
+
+.logo {
+  position: absolute;
+  height: 90px;
+  left: 2%
+}
+
+.tt:hover {
+  color: #66ACFF;
+  transition-duration: 200ms;
+}

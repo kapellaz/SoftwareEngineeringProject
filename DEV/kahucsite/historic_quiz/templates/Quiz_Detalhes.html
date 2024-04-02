@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Detalhes de Quiz</title>
+    <link href="{% static 'historic_quiz/styles.css' %}?{% now 'U' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+
+  {% for quiz in quizzs %}
+    <div class="toptitle">
+      <h1>Quiz #{{ quiz.id}}</h1>
+    </div>
+       {% comment %}  <p class="quiz-tag"> {{quiz.tags}}</p> Colocar o nome da tag em algum lado so ns onde ahah xD{% endcomment %}
+    <div class=" quiz">
+      <div class="quiz-per-des">
+        <p class="pergunta">Pergunta: {{ quiz.question }}</p>
+        <p class="descricao">Descricao: {{ quiz.description }}</p>
+      </div>
+
+      {% for opcao in Opcoes %} {% for opc in opcao %}
+      {% if opc.quiz.id == quiz.id %}
+      <div class="quiz-opc">
+        <div class="in-line">
+          <p class="opcao">opção: {{ opc.text }}</p>
+          <p class="resposta"><b>{{ opc.selection }}</b></p>
+        </div>
+        <p class="justificacao">justificação: {{ opc.justification }}</p>
+      </div>
+
+      {% endif %}
+
+      {% endfor %} {% endfor %}
+    </div>
+      {% if edit == True %}
+          <div  class='local_btt'>
+            <button  onclick="location.href = '/historic_quiz/quiz={{ quiz.id}}/edit';" type= 'button'>Editar </button>
+          </div>
+
+      {% endif %}
+    {% endfor %}
+    </main>
+
+
+  <script src="{% static 'historic_quiz/scripts.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+
+#+title:  Mapa de Planeamento
+#+author: João Moreira
+#+date:   2022-11-18
+
+* REQ
+Diretório para ficheiros relacionados aos requerimentos técnicos, dos clientes e dos produtos.
+
+O design visual da aplicação, requerimentos das features e conjuntos de testes para requerimentos
+estão aqui presentes.
+
+** Premissões
+*Criador
+Para ser criador basta criar uma conta
+
+*Revisor
+Para ser revisor é necessário criar pelo menos 3 quizzes que tenham sido aprovados
+
+*Resolvedor
+Para ser resolvedor é preciso rever pelo menos 3 quizzes que fiquem aprovados
+
+** 1 - AUTENTICAÇÃO
+*Como utilizador, quero criar ou iniciar sessão ou recuperar a palavra-passe da minha conta
+para criar, rever e resolver quizzes.*
+- [[REQ_01.1_criar_conta.md   ][UC-1]]
+- [[REQ_01.2_login.md         ][UC-2]]
+- [[REQ_01.3_recuperar_pass.md][UC-3]]
+
+
+** 2 - VER RESULTADOS DO TESTE QUE RESOLVI
+*Como solver, quero poder ver o resultado dos testes que realizei para que possa saber o que
+errei e porquê*.
+- [[REQ_02.2_resultados_teste.md][UC-2]]
+
+
+** 3/4 - RESOLVER TESTE
+*3 - Como utilizador autenticado com permissão para resolver testes, quero poder escolher um teste para resolver.*
+- [[REQ_03.1_escolher_teste.md][UC-1]]
+*4 - Como resolvedor quero poder realizar um teste.*
+- [[REQ_04.2_resolver_teste.md][UC-2]]
+
+
+** 5 - CRIAR QUIZ
+*Como criador quero adicionar perguntas para criar um quizz.*
+- [[REQ_05.1_criar_quiz.md][UC-1]]
+
+
+** 6 - VER HISTORICO DE QUIZZES CRIADOS
+* Como criador quero ser capaz de ver os Quizz's que criei, bem como as suas opções e o seu status*
+- [[REQ_06.1_quizzes_do_user.md][UC-1]]
+- [[REQ_06.2_abrir_quizzes_do_user.md][UC-2]]
+
+
+** 7/10 - REVER QUIZ
+*7 - Como revisor, quero poder aprovar/rever quizzes para poder corrigir quizzes*.
+- [[REQ_07.1_rever_quiz.md][UC-1]]
+*10 - Como revisor de quizzes, quero apenas ver quizzes à espera de aprovação para não perdertempo a procurar na totalidade dos quizzes existentes.*
+- [[REQ_10.1_listar_quizzes_revisao.md][UC-1]]
+
+
+** 8 - EDITAR QUIZ
+*Como criador, quero poder editar um quiz reprovado para que este possa ser reavaliado*
+- [[REQ_08.1_editar_quiz.md][UC-1]]
+- [[REQ_08.2_ver_comentarios_reprovacao.md][UC-2]]
+
+
+** 9 - TER UM HALL OF FAME DE RESOLVEDORES
+*Como utilizador, quero poder ver um pódio dos melhores solvers para saber quantos quizzes foram resolvidos corretamente e por quem*
+- [[REQ_09.1_hall_of_fame.md][UC-1]]
+
+
+** 11 - CRIAR TESTES
+*Como criador de testes, quero poder fazer testes com base em tags para os resolvedores poderem resolver*
+- [[REQ_11.1_criar_testes.md][UC-1]]
+
+
+** 12 - SELECIONAR TAGS PARA QUIZ
+*Como criador de quizzes quero poder selecionar pelo menos uma tag aquando da criação do quiz para que os testes possam ser criados com base nessas tags*
+- [[REQ_12.1_selecionar_tags.md][UC-1]]
+
+
+** 13 - PERFIL DE UTILIZADOR
+*Como utilizador autenticado, quero poder aceder a uma pagina de perfil com as informações sobre o número de quizzes de uma dada categoria (tags) que acertei.*
+- [[REQ_13.1_numero_de_quizzes_por_tag.md][UC-1]]
+
+
+** 14/15 - IMPORTAR E EXPORTAR QUIZZES EM XML
+*14 - Como admin quero poder exportar quizzes em XML para ser possivel exportar quizzes feitos na minha PL para a aplicação de outras turmas*
+- [[REQ_14.1_exportar_quizzes_em_XML.md][UC-1]]
+*15 - Como admin quero poder importar quizzes em XML para ser possivel importar quizzes criados noutra PL para a minha aplicação*
+- [[REQ_15.1_importar_quizzes_em_XML.md][UC-1]]
+
+
+* Casos de Uso Realizados
+
+| US |  REQ | STATE | IN CHARGE | SPRINT |
+|----+------+-------+-----------+--------|
+|  1 |  1.1 | DONE  | G1        | ------ |
+|  1 |  1.2 | DONE  | G1        | ------ |
+|  1 |  1.3 | DONE  | G1        | ------ |
+|  2 |  2.1 | DONE  | G3        | ------ |
+|  2 |  2.2 | DONE  | G3        | ------ |
+|  3 |  3.1 | DONE  | G2        | ------ |
+|  4 |  4.1 | DONE  | G2        | ------ |
+|  5 |  5.1 | DONE  | G5        | ------ |
+|  6 |  6.1 | DONE  | G5        | ------ |
+|  6 |  6.2 | DONE  | G5        | ------ |
+|  7 |  7.1 | DONE  | G4        | ------ |
+|  8 |  8.1 | DONE  | G5        | ------ |
+|  9 |  9.1 | DONE  | G3        | ------ |
+| 10 | 10.1 | DONE  | G4        | ------ |
+
+
+* Casos de Uso Eliminados
+
+| US | REQ | STATE     | IN CHARGE   | SPRINT |
+|----+-----+-----------+-------------+--------|
+|  2 | 2.1 | ABANDONED | ----------- | ------ |
+
+
+* Mapa Sprint 5
+
+| US |  REQ | STATE            | IN CHARGE | SPRINT |
+|----+------+------------------+-----------+--------|
+|  4 |  4.2 | To-Do            | G2        |  5 & 6 |
+|  8 |  8.2 | To-Be-Merged     | G5        |      5 |
+|  9 |  9.2 | To-Write & To-Do | G3        |      5 |
+| 11 | 11.1 | To-Do            | G4        |      5 |
+| 12 | 12.1 | DONE             | G5        |      5 |
+| 13 | 13.1 | To-Do            | G2        |  5 & 6 |
+| 14 | 14.1 | To-Write & To-Do | G1        |      5 |
+| 15 | 15.1 | To-Write & To-Do | G1        |      5 |
+
+
+* Mapa Sprint 6
+
+| US | REQ | STATE        | IN CHARGE | SPRINT |
+|----+-----+--------------+-----------+--------|
+|  4 |  4.2| To-Do        | G2        |      6 |
+|  8 | 8.2 | To-Be-Merged | G5        |      6 |
+| 13 | 13.1| To-Do        | G2        |      6 |

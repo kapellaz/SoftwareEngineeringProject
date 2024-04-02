@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <title>Quizzes que pode rever</title>
+    {% load static %}
+    <meta charset="UTF-8">
+	<meta content="width-device-width,initial-scale=1.0" name="viewport">
+    <link href="{% static 'review_quiz/style_list.css' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>{{message}}</strong>
+        <span class="btn-close" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+    {% endfor %}
+
+    <div class="toptitle">
+        <h1>Quizzes a rever</h1>
+    </div>
+
+    <div class="filtros">
+        {% if oldest == 0 %}
+        <a href="./oldestfirst/"><button class="btn" id="left">Mais antigos</button></a>
+        <a href="./editados/"><button class="btn">Editados</button></a>
+        <a href="./aprovados/"><button class="btn">Aprovados</button></a>
+        {% elif oldest == 1 %}
+        <a href="../"><button class="btn">Mais Recentes</button></a>
+        <a href="../editados/"><button class="btn">Editados</button></a>
+        <a href="../aprovados/"><button class="btn">Aprovados</button></a>
+        {% elif aproved == 0 %}
+        <a href="../"><button class="btn">Mais Recentes</button></a>
+        <a href="../editados/"><button class="btn">Editados</button></a>
+        <a href="../aprovados/"><button class="btn">Aprovados</button></a>
+        {% elif aproved == 1 %}
+        <a href="../"><button class="btn">Mais Recentes</button></a>
+        <a href="../editados/"><button class="btn">Editados</button></a>
+        <a href="../aprovados/"><button class="btn">Aprovados</button></a>
+        {% endif %}
+
+    </div>
+    <div class="quizzes">
+        {% if length == 0 %}
+        <center>
+            <h2>Não tem quizzes!!</h2>
+        </center>
+
+        {% endif %}
+        {% for quiz in all %}
+        <div class="quiz">
+            <h4 class="question">
+                Quiz #{{quiz.id}}
+                {{quiz.description}}
+            </h4>
+            <div class="data">
+                {% if aproved == 0 %}
+                    {% if quiz.approval == True %}
+                        <h4 class="myappvr">APROVEI     </h4>
+                    {% elif quiz.approval == False %}
+                        <h4 class="myappvr">REPROVEI     </h4>
+                    {% endif %}
+                {% endif %}
+
+                <h4 class="tag" style="display: inline;">
+                TAG#{{quiz.tags.name}}
+                <h4 class="appr_rej" style="margin-inline: 5%;">
+                    {{quiz.num_approvals}} <span style="color: green; display: inline;">&#10004;</span>
+                    {{quiz.num_rejections}} <span style="color: red;">&#215;</span>
+                </h4>
+            </h4>
+        </div>
+            {% if oldest == 0 %}
+                <a class="btnn" href="../{{quiz.id}}"><button class="myButton">Rever</button></a>
+            {% elif oldest == 1 %}
+                <a class="btnn" href="../../{{quiz.id}}"><button class="myButton">Rever</button></a>
+
+            {% elif aproved == 0 %}
+                <a class="btnn" href="../../{{quiz.id}}"><button class="myButton">Rever</button></a>
+             {% else %}
+                <button class="state">{{quiz.approval_state}}</button>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+</main>
+
+</body>
+</html>

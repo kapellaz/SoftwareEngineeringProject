@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <title>Seleção de teste</title>
+    <link href="{% static 'solve_test/select_test.css' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+    <div class="toptitle">
+              <h1>Seleção de teste</h1>
+    </div>
+
+    <!--
+    <div >
+        <form>
+            <input class="barra_pesquisa"  type="text" placeholder=" Procurar....">
+        </form>
+    </div>
+    -->
+    {% if all_tests %}
+    <div class="teste" >
+
+        {% for x in all_tests %}
+
+        <div class="teste_titulo">
+            <p class="test_name"> {{ x.name }} </p>
+            <form action="/solve_test/temp/{{ x.id }}/">
+                <button class="button">Iniciar</button>
+            </form>
+
+        </div>
+        {% endfor %}
+
+    </div>
+    {% else %}
+
+    <div class="empty">
+        <p class="frase">Não existem testes de momento...</p>
+    </div>
+    {% endif %}
+</main>
+
+</body>
+
+</html>

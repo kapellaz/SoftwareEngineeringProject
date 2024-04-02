@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+  <title>Editar quizz</title>
+  <meta charset="UTF-8">
+	<meta content="width-device-width,initial-scale=1.0" name="viewport">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+    <link href="{% static 'historic_quiz/styles2.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+
+{% include 'navbar.html' %}
+
+<main>
+  <div class="toptitle">
+    <h1>Editar Quiz</h1>
+  </div>
+
+
+  <form action="" method="POST"> {% csrf_token %}
+    <div id='main_container'>
+
+      <!-- pergunta -->
+      <div class="left">
+        <div class='just'>
+          <label> Pergunta: </label>
+          {{ form.question }}
+        </div>
+      <img class="popup-open" id="img" src="{% static 'historic_quiz/popup.png' %}">
+      <!-- descição opcional -->
+      </div>
+      <div class="right">
+        <label> Descrição da pergunta (opcional):</label>
+        {{ form.description }}
+
+      </div>
+
+      <dialog class="popup" id="comment{{quiz.id}}">
+        <div class="popup-header">
+          <p class="popup-title">Comentarios dos Revisores</p>
+        </div>
+        <div class="popup-body">
+          {% for comments in comments_final %}
+          <div class="popup-body-item">
+            <span class="revisor">#{{comments.approver}}:</span>{{comments.comment}} <span id="elemento-para-remover">{{comments.approval}}</span>
+            <br>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="popup-footer">
+          <button class="popup-close" type="button" id="close{{quiz.id}}">Fechar</button>
+        </div>
+      </dialog>
+
+      <!-- opções -->
+      <div class="left">
+        <div class='opc'>
+          <label> Opção 1:</label>
+          {{ form.option1 }}
+        </div>
+        <div class="valor1">
+          {{form.field1}}
+        </div><br>
+        <div class='just'>
+          <label> Justificação 1:</label>
+          {{ form.description1 }}
+        </div>
+        <img class="popup-open" id="img1" src="{% static 'historic_quiz/popup.png' %}">
+        <dialog class="popup" id="comment1">
+          <div class="popup-header">
+            <p class="popup-title">Comentarios dos Revisores</p>
+          </div>
+          <div class="popup-body">
+            {% for comments in options1 %}
+            <div class="popup-body-item">
+              <span class="revisor">#{{comments.approver}}:</span>{{comments.comment}}  {{comments.approval}}
+              <br>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="popup-footer">
+            <button class="popup-close" type="button" id="close1">Fechar</button>
+          </div>
+        </dialog>
+      </div>
+
+      <div class="right">
+        <div class='opc'>
+          <label> Opção 2:</label>
+          {{ form.option2 }}
+        </div>
+        <div class="valor1">
+          {{form.field2}}
+        </div><br>
+        <div class='just'>
+          <label> Justificação 2:</label>
+          {{ form.description2 }}
+        </div>
+        <img class="popup-open" id="img1" src="{% static 'historic_quiz/popup.png' %}">
+        <dialog class="popup" id="comment1">
+          <div class="popup-header">
+            <p class="popup-title">Comentarios dos Revisores</p>
+          </div>
+          <div class="popup-body">
+            {% for comments in options2 %}
+            <div class="popup-body-item">
+              <span class="revisor">#{{comments.approver}}:</span>{{comments.comment}}  {{comments.approval}}
+              <br>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="popup-footer">
+            <button class="popup-close" type="button" id="close1">Fechar</button>
+          </div>
+        </dialog>
+      </div>
+
+      <div class="left">
+        <div class='opc'>
+          <label> Opção 3:</label>
+          {{ form.option3 }}
+        </div>
+        <div class="valor1">
+          {{form.field3}}
+        </div><br>
+        <div class='just'>
+          <label> Justificação 3:</label>
+          {{ form.description3 }}
+        </div>
+        <img class="popup-open" id="img1" src="{% static 'historic_quiz/popup.png' %}">
+        <dialog class="popup" id="comment1">
+          <div class="popup-header">
+            <p class="popup-title">Comentarios dos Revisores</p>
+          </div>
+          <div class="popup-body">
+            {% for comments in options3 %}
+            <div class="popup-body-item">
+              <span class="revisor">#{{comments.approver}}:</span>{{comments.comment}}  {{comments.approval}}
+              <br>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="popup-footer">
+            <button class="popup-close" type="button" id="close1">Fechar</button>
+          </div>
+        </dialog>
+      </div>
+
+      <div class="right">
+        <div class='opc'>
+          <label> Opção 4:</label>
+          {{ form.option4 }}
+        </div>
+        <div class="valor1">
+          {{form.field4}}
+        </div><br>
+        <div class='just'>
+          <label> Justificação 4:</label>
+          {{ form.description4 }}
+        </div>
+        <img class="popup-open" id="img1" src="{% static 'historic_quiz/popup.png' %}">
+        <dialog class="popup" id="comment1">
+          <div class="popup-header">
+            <p class="popup-title">Comentarios dos Revisores</p>
+          </div>
+          <div class="popup-body">
+            {% for comments in options4 %}
+            <div class="popup-body-item">
+              <span class="revisor">#{{comments.approver}}:</span>{{comments.comment}}  {{comments.approval}}
+              <br>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="popup-footer">
+            <button class="popup-close" type="button" id="close1">Fechar</button>
+          </div>
+        </dialog>
+      </div>
+
+      <div class="left">
+        <div class='opc'>
+          <label> Opção 5:</label>
+          {{ form.option5 }}
+        </div>
+        <div class="valor1">
+          {{form.field5}}
+        </div><br>
+        <div class='just'>
+          <label> Justificação 5:</label>
+          {{ form.description5 }}
+        </div>
+        <img class="popup-open" id="img1" src="{% static 'historic_quiz/popup.png' %}">
+        <dialog class="popup" id="comment1">
+          <div class="popup-header">
+            <p class="popup-title">Comentarios dos Revisores</p>
+          </div>
+          <div class="popup-body">
+            {% for comments in options5 %}
+            <div class="popup-body-item">
+              <span class="revisor">#{{comments.approver}}:</span>{{comments.comment}}  {{comments.approval}}
+              <br>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="popup-footer">
+            <button class="popup-close" type="button" id="close1">Fechar</button>
+          </div>
+        </dialog>
+      </div>
+
+      <div class="right">
+        <div class='opc'>
+          <label> Opção 6:</label>
+          {{ form.option6 }}
+        </div>
+        <div class="valor1">
+          {{form.field6}}
+        </div><br>
+        <div class='just'>
+          <label> Justificação 6:</label>
+          {{ form.description6 }}
+        </div>
+        <img class="popup-open" id="img1" src="{% static 'historic_quiz/popup.png' %}">
+        <dialog class="popup" id="comment1">
+          <div class="popup-header">
+            <p class="popup-title">Comentarios dos Revisores</p>
+          </div>
+          <div class="popup-body">
+            {% for comments in options6 %}
+            <div class="popup-body-item">
+              <span class="revisor">#{{comments.approver}}:</span>{{comments.comment}}
+              <br>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="popup-footer">
+            <button class="popup-close" type="button" id="close1">Fechar</button>
+          </div>
+        </dialog>
+      </div>
+      <!-- Mensagem de erro do numero de opções verdadeiras e falsas -->
+
+      <div class = "error">
+            <p>{{errors}}</p>
+      </div>
+
+
+    </div>
+    <!-- pop-ups dos butões submeter e cancelar -->
+      <div class='btns_'>
+        <button class="buttons" type="button" id="sub2"> Editar </button>
+          <!--<button  class='buttons' type="button" id="popup_tags">Tags </button>-->
+        <button  onclick="location.href = '/historic_quiz/';" type= 'button'>Cancelar </button>
+        {% comment %} <a class="btnbtn--main" href="/historic_quiz/">Cancel</a> {% endcomment %}
+      </div>
+
+      
+      <dialog class="popup2" id="popup">
+				<div class="content">
+					<div class="pop-header">
+						<h2>Deseja concluir?</h2>
+					</div>
+
+					<div class="popup-footer">
+            <button class="popup2-close" type= 'button' >Fechar</button>
+            <button type="submit" value="Submeter" class='submit'>Submeter</button>
+					</div>
+				</div>
+			</dialog>
+      
+<!--
+      <dialog class="popup3" id="popup">
+				<div class="content">
+					<div class="pop-header">
+						<h2>Deseja concluir?</h2>
+					</div>
+
+					<div class="btns">
+						<button class="popup2-close" type="button">Fechar</button>
+						<button type="submit" value="Submeter" class='submit'>Submeter</button>
+					</div>
+				</div>
+			</dialog>
+-->
+
+      <dialog class='popup_tags' id="popup">
+        <div class='modal2'>
+          <h2 class='text'> Selecione a tag do quiz: </h2>
+          <div class='tags'>
+            {% for x in form.tag %}
+            <div class='tag_solo'>
+              {{x.tag}}
+              {{x.choice_label}}
+            </div>
+            {% endfor %}
+          </div>
+          <button class='cancelar' type= 'button' >Fechar</button>
+        </div>
+      </dialog>
+
+
+    </div>
+
+  </form>
+</main>
+
+
+</body>
+<script>
+
+	var open = document.getElementsByClassName("popup-open")
+	var close = document.getElementsByClassName("popup-close")
+	var modal = document.getElementsByClassName("popup")
+	const open2 = document.querySelector(".buttons")
+	const close2 = document.querySelector(".popup2-close")
+	const modal2 = document.querySelector(".popup2")
+  const opentag = document.querySelector(".popup_tags")
+	const closetag = document.querySelector(".cancelar")
+	const modaltag = document.querySelector(".popup_tags")
+  const close3 = document.querySelector(".submit")
+  var containerElement = document.getElementById('main_container');
+  let e1= document.getElementsByClassName('popup-body-item');
+  var edit= document.getElementsByClassName("revisor")
+	var i
+
+	for (let i = 0; i < open.length; i++) {
+		open[i].onclick = function () {
+      containerElement.setAttribute('class', 'blur');
+			modal[i].showModal()
+		}
+
+		close[i].onclick = function () {
+      containerElement.setAttribute('class', null);
+			modal[i].close()
+		}
+	}
+	open2.onclick = function () {
+    containerElement.setAttribute('class', 'blur');
+		modal2.showModal()
+	}
+	close2.onclick = function () {
+    containerElement.setAttribute('class', null);
+		modal2.close()
+	}
+
+  for( let texto of e1 ){
+      console.log("idajj");
+      if( texto.textContent.includes('True')){
+          texto.getElementsByClassName('revisor').item(0).style.color = ' #006400';
+          var elemento = texto.querySelector("#elemento-para-remover");
+          elemento.parentNode.removeChild(elemento);
+
+      }else if(texto.textContent.includes('False')){
+          texto.getElementsByClassName('revisor').item(0).style.color = 'red';
+          var elemento = texto.querySelector("#elemento-para-remover");
+          elemento.parentNode.removeChild(elemento);
+      }
+
+};
+
+  opentag.onclick = function () {
+    containerElement.setAttribute('class', 'blur');
+		modaltag.showModal()
+	}
+	closetag.onclick = function () {
+    containerElement.setAttribute('class', null);
+		modaltag.close()
+	}
+
+
+
+
+</script>
+
+</html>

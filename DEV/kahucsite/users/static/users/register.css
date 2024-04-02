@@ -1,0 +1,185 @@
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbarContainer {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.navElement {
+
+  font-size: 1.2vw;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
+
+.divRegister {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10vh;
+  padding-left: 15vw;
+
+}
+
+.registerContainer {
+  width: 28vw;
+  height: 60vh;
+  background: linear-gradient(112.66deg, #164270 -14.13%, #165081 80%);
+  opacity: 1;
+  box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error_div {
+  width: 20vw;
+  color: white;
+  height: 7vh;
+  background: linear-gradient(112.66deg, #164270 -14.13%, #165081 80%);
+  opacity: 1;
+  box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2vh;
+  padding-right: 20vw;
+}
+
+.title {
+  padding-top: 2vh;
+  color: white;
+  font-size: 2vw;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.space {
+  height: 2vh;
+}
+
+.nameInputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 24.5vw;
+
+}
+
+input[type=text] {
+  border-color: white;
+  height: 5vh;
+  width: 9vw;
+  border-radius: 4px;
+}
+
+
+.inputLong[type=text] {
+  height: 5vh;
+  width: 22vw;
+  padding-right: 2vw;
+  border-radius: 4px;
+}
+
+.inputLong[type=password] {
+  height: 5vh;
+  width: 22vw;
+  padding-right: 2vw;
+  border-radius: 4px;
+}
+
+.buttonSection {
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+  width: 21.6vw;
+}
+
+.registarButton {
+  width: 10vw;
+  height: 5vh;
+  background: #03045E;
+  border-radius: 20px;
+  border-color: #03045E;
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.1vw;
+  color: white;
+  justify-content: center;
+
+}
+
+.textButton {
+  color: white;
+  font-size: 1.2vw;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 1vh;
+  text-decoration: none;
+}
+
+.finalText {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: 'Roboto', sans-serif;
+  color: white
+}
+
+.logIn {
+  color: #66ACFF;
+  text-decoration: none;
+}
+
+.navElement:hover {
+  color: #66ACFF;
+  font-size: 1.2vw;
+  transition-duration: 200ms;
+}
+
+
+.registarButton:hover {
+  border-color: #66ACFF;
+  border-style: solid;
+  background-color: #66ACFF;
+  transition-duration: 1000ms;
+
+}
+
+.logIn:hover {
+  color: #03045E;
+  transition-duration: 1000ms;
+}

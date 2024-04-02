@@ -1,0 +1,49 @@
+@startuml
+skinparam DefaultTextAlignment right
+skinparam RectangleBorderColor black
+skinparam RoundCorner 15
+
+skinparam titleBorderRoundCorner 1
+skinparam titleBorderThickness 1
+skinparam titleBorderColor #DDDDDD
+skinparam titleBackgroundColor #DDDDDD
+title "\t LOGO\t\t\tPágina inicial   Sobre Nós   Nome de utilizador"
+
+rectangle "Quizzes a Rever" as QaR#FFF
+
+rectangle "<b>Mais Antigos        Editados        Aprovados" as filtros#090992
+
+rectangle "Quiz1                                                                          Tags        Status        Rever" as Quiz1#DDDDDD
+rectangle "Quiz2                                                                          Tags        Status        Rever" as Quiz2#DDDDDD
+rectangle "Quiz3                                                                          Tags        Status        Rever" as Quiz3#DDDDDD
+rectangle "Quiz4                                                                          Tags        Status        Rever" as Quiz4#DDDDDD
+rectangle "Quiz5                                                                          Tags        Status        Rever" as Quiz5#DDDDDD
+
+
+
+QaR -[hidden]-> filtros
+filtros -[hidden]-> Quiz1
+Quiz1 -[hidden]-> Quiz2
+Quiz2 -[hidden]-> Quiz3
+Quiz3 -[hidden]-> Quiz4
+Quiz4 -[hidden]-> Quiz5
+
+
+<style>
+componentDiagram {
+  BackgroundColor #03045E
+  FontColor black
+}
+document {
+  BackGroundColor #0077B6/#00B4D8
+}
+title {
+  BackGroundColor #66ACFF
+  BorderColor black
+  BorderThickness 1
+  RoundCorner 1
+}
+
+</style>
+
+@enduml

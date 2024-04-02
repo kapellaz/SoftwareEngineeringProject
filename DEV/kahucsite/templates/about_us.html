@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <title>Sobre nós</title>
+<meta charset="UTF-8">
+	<meta content="width-device-width,initial-scale=1.0" name="viewport">
+    <link href="{% static 'about_us_page/about_us.css' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+
+    <div class="toptitle">
+        <h1 id="title">Sobre nós</h1>
+    </div>
+
+    <div class="main-content">
+
+        <div class="left">
+            <h3 id="about">Sobre o projeto:</h3>
+            <p>O KahUC é projeto realizado por 31 estudantes do terceiro ano da licenciatura em engenharia informática
+                da universidade de Coimbra do ano letivo 2022/2023. Este projeto é realizado no âmbito da cadeira, de
+                primeiro semestre, Engenharia de Software sendo esta regida pelo professor Mário Zenha Rela e à qual
+                pertencemos à turma Prática-Laboratorial 2 que é lecionada pelo professor Nuno Seixas.</p>
+        </div>
+
+        <div class="right">
+            <h3 id="devs">Desenvolvedores:</h3>
+            <table class="names">
+                <tr>
+                    <td>André Moreira</td>
+                    <td>Bruno Sequeira</td>
+                    <td>David Moreira</td>
+                </tr>
+                <tr>
+                    <td>Diogo Tavares</td>
+                    <td>Eduardo Carvalho</td>
+                    <td>Eduardo Figueiredo</td>
+                </tr>
+                <tr>
+                    <td>Emanuel Roque</td>
+                    <td>Filipe Figueiredo</td>
+                    <td>Fábio Santos</td>
+                </tr>
+                <tr>
+                    <td>Gonçalo Almeida</td>
+                    <td>Gonçalo Senra</td>
+                    <td>Guilherme Branco</td>
+                </tr>
+                <tr>
+                    <td>Gustavo Lima</td>
+                    <td>Henrique Costa</td>
+                    <td>Hugo Priva</td>
+                </tr>
+                <tr>
+                    <td>João Coelho</td>
+                    <td>João Moreira</td>
+                    <td>João Pinto</td>
+                </tr>
+                <tr>
+                    <td>João Santos</td>
+                    <td>Lucas Anjo</td>
+                    <td>Luis Neto</td>
+
+                </tr>
+                <tr>
+                    <td>Miguel Fazenda</td>
+                    <td>Miguel Pedroso</td>
+                    <td>Pedro Fernandes</td>
+                </tr>
+                <tr>
+                    <td>Ricardo Guegan</td>
+                    <td>Ricardo Rosa</td>
+                    <td>Rui Santos</td>
+
+                </tr>
+                <tr>
+                    <td>Samuel Machado</td>
+                    <td>Tiago Soares</td>
+                    <td>Tomás Dias</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Tomás Pinto</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</main>
+</body>
+<script>
+    const easteregg = document.querySelector("#title")
+
+    easteregg.onclick = function () {
+        document.getElementById("devs").innerHTML = "Desenvolvedores entusiasmados e felizes:";
+    }
+</script>
+</html>

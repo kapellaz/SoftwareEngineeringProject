@@ -1,0 +1,3 @@
+@startuml
+rectangle "Deseja Confirmar?\n\nSim                   Não"
+@enduml

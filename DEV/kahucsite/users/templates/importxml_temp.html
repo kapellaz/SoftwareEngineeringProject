@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    {% load static %}
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+    <link href="{% static 'homepage/homepage.css' %}" rel="stylesheet">
+    <link href="{% static 'users/import_xml.css' %}" rel="stylesheet">
+    <title>Import XML</title>
+
+
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    
+    <main>
+        <form class='divRegister' enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <div class="registerContainer">
+                <div class = "inside">
+
+                    </div>
+                    {{ form.file }}
+                    <div class="butao">
+                        <input type="submit" value="Import">
+                    </div>
+                    
+                </div>
+            <section class="errors">
+                {% for message in messages %}
+                <div class="container">
+                    <div class="error_div">
+                        {{ message }}
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+    
+        </form>
+    </main>
+
+        <!--
+        <form method="POST" enctype="multipart/form-data" class="maindiv">
+            {% csrf_token %}
+            <div class="mainDiv">
+                
+                {{ form.file }}
+            <div>
+                <input type="submit" value="Import" class="">
+            </div>
+            </div>
+            
+            
+        </form>
+    </main>
+        
+        
+            <div>
+            {% for message in messages %}
+            <div>
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+
+        -->
+        
+    
+    
+    
+</body>
+
+</html>

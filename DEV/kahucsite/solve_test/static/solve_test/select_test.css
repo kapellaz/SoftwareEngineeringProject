@@ -1,0 +1,69 @@
+
+
+.button{
+    justify-content: center;
+    position:relative;
+    float: right;
+    right: 3%;
+    margin-top: 30px;
+}
+
+
+.toptitle {
+    max-width: 500px;
+}
+
+.barra_pesquisa{
+    display: block;
+    margin: 0 auto;
+    text-align:left;
+    height: 300%;
+    width: 40%;
+
+    border-radius: 20px;
+    border: none;
+
+    padding: 7px;
+
+    margin-top: 2%;
+}
+
+
+.teste{
+    display:flexbox;
+    align-items: center;
+
+    margin-top: 4%;
+}
+
+.teste_titulo{
+    margin-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    min-height: 100px;
+
+    background-color: white;
+    border-radius: 20px;
+
+
+}
+
+
+.test_name{
+    margin-left: 1%;
+    position:absolute;
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+.empty{
+    margin-top: 10%;
+
+}
+
+.frase{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}

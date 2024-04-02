@@ -1,0 +1,101 @@
+
+@startuml Wire5.1_1
+!pragma layout smetana
+
+skinparam DefaultTextAlignment right
+skinparam RoundCorner 15
+
+<style>
+
+componentDiagram {
+  BackgroundColor #03045E
+  FontColor black
+}
+
+document {
+  BackGroundColor #0077B6/#00B4D8
+}
+
+title {
+  BackGroundColor #66ACFF
+  BorderColor black
+  BorderThickness 1
+  RoundCorner 1
+}
+
+</style>
+title "\t\t\t\t\t\t\t\t\t\t\t__<b>NAV BAR__\t\t\t\t\t\t\t<i>__Nome de utilizador__ <&person>\n<i>__Logout__ <&account-login>"
+rectangle "\n\t\t\t\t\t\tPergunta\t\t\t\t\t\t\n" as Question #CAF0F8
+rectangle "\n\t\t\tDescrição da pergunta (opcional):\t\t\t\n" as Description #CAF0F8
+rectangle "\t\t\t\t\t\tOpção 1\t\t\t\t\t\t" as Op1 #CAF0F8
+rectangle "\t\t\t\t\t\tOpção 2\t\t\t\t\t\t" as Op2 #CAF0F8
+rectangle "\n\t\t\t Justificação: \t\t\t\n" as J1 #CAF0F8
+rectangle "\n\t\t\t Justificação: \t\t\t\n" as J2 #CAF0F8
+
+rectangle "\t\t\t\t\t\tOpção 3\t\t\t\t\t\t" as Op3 #CAF0F8
+rectangle "\t\t\t\t\t\tOpção 4\t\t\t\t\t\t" as Op4 #CAF0F8
+rectangle "\n\t\t\t Justificação: \t\t\t\n" as J3 #CAF0F8
+rectangle "\n\t\t\t Justificação: \t\t\t\n" as J4 #CAF0F8
+
+rectangle "\t\t\t\t\t\tOpção 5\t\t\t\t\t\t" as Op5 #CAF0F8
+rectangle "\t\t\t\t\t\tOpção 6\t\t\t\t\t\t" as Op6 #CAF0F8
+rectangle "\n\t\t\t Justificação: \t\t\t\n" as J5 #CAF0F8
+rectangle "\n\t\t\t Justificação: \t\t\t\n" as J6 #CAF0F8
+
+rectangle "\tSubmeter\t" as Sub #text:white
+rectangle "\tCancelar \t" as Canc #text:white
+rectangle "\tTags\t" as Tags #text:white
+
+circle "F" as F1 #CAF0F8
+circle "F" as F2 #CAF0F8
+circle "F" as F3 #CAF0F8 
+circle "F" as F4 #CAF0F8 
+circle "F" as F5 #CAF0F8 
+circle "F" as F6 #CAF0F8 
+
+circle "V" as V1 #CAF0F8
+circle "V" as V2 #CAF0F8 
+circle "V" as V3 #CAF0F8 
+circle "V" as V4 #CAF0F8
+circle "V" as V5 #CAF0F8 
+circle "V" as V6 #CAF0F8 
+
+Question -[hidden]right-> Description
+Question -[hidden]-> Op1
+Op1 -[hidden]right-> Op2
+
+Op1 -[hidden]down-> J1
+J1 -[hidden]right-> F1
+F1 -[hidden]right-> V1
+
+Op2 -[hidden]down-> J2
+J2 -[hidden]right-> F2
+F2 -[hidden]right-> V2
+
+J1 -[hidden]-> Op3
+J2 -[hidden]-> Op4
+
+Op3 -[hidden]down-> J3
+J3 -[hidden]right-> F3
+F3 -[hidden]right-> V3
+
+Op4 -[hidden]down-> J4
+J4 -[hidden]right-> F4
+F4 -[hidden]right-> V4
+
+J3 -[hidden]-> Op5
+J4 -[hidden]-> Op6
+
+Op5 -[hidden]down-> J5
+J5 -[hidden]right-> F5
+F5 -[hidden]right-> V5
+
+Op6 -[hidden]down-> J6
+J6 -[hidden]right-> F6
+F6 -[hidden]right-> V6
+
+F6 -[hidden]-> Tags
+J5 -[hidden]-> Canc
+J5 -[hidden]-> Sub
+
+@enduml

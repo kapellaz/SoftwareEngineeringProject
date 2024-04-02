@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    <title>Export Quizzes</title>
+    {% load static %}
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+    <link href="{% static 'homepage/homepage.css' %}" rel="stylesheet">
+    <link href="{% static 'quiz/exportxml.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div>
+        {% include 'navbar.html' %}
+    <div class="header">
+        {% if all_quizzes %}
+        <div class="teste" >
+            <form method="POST">
+                {%  csrf_token %}
+                {% for x in all_quizzes %}
+                    <input type="checkbox" value="{{x.id}}" name="questions">{{ x.question }}<br>
+                {% endfor %}
+                <br><button value="export">Exportar</button>
+            </form>
+        </div>
+        {% else %}
+
+        <div class="warningDiv">
+            Não existem testes de momento...
+        </div>
+        {% endif %}
+    </div>
+    </div>
+</body>
+</html>

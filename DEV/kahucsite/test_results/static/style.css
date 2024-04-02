@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  font-family: monocode, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2% 5% 2% 2%;
+}
+
+.logoLink {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav_links li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: #abc8ef;
+}
+
+header button {
+    margin-left: 20px;
+    color: white;
+    padding: 9px 25px;
+    background-color: rgb(57, 90, 234);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+header button:hover {
+    background-color: rgba(57, 90, 234, 0.37);
+}
+
+
+
+.quizClass {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    left: 50vw;
+    bottom: 95vh;
+    width: 45vw;
+    background: rgba(141, 212, 231, 0.4);
+    padding: 10px;
+}
+
+.quizClass b {
+    padding: 10px;
+    background: white;
+    border-radius: 25px;
+}
+
+.quizClass .contentBox{
+    position: relative;
+    margin-top: 10px;
+}
+
+.quizClass .contentBox .label{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    border: solid #000000 1px;
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+.quizClass .contentBox .label::after{
+    content: "Clica para ver a justificação";
+    position: relative;
+    right: 3%;
+    float: right;
+}
+
+.quizClass .contentBox.active .label::after{
+    display: none;
+}
+
+.quizClass .contentBox .content{
+    position: relative;
+    background: #ffffff;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+}
+
+.quizClass .contentBox.active .content{
+    height: auto;
+    padding: 10px;
+}
+
+
+.quizClass .selected{
+    border: 4px solid white;
+}
+
+/*
+    Círculo+percentagem
+ */
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 20vh;
+    right: 30vw;
+    transform: scale(2);
+}
+
+.box .percent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.box .percent svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.box .percent svg circle{
+    fill: none;
+    stroke-width: 10;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    stroke-linecap: round;
+}
+
+.box .percent svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke: rgb(255, 255, 255);
+}
+
+.box .percent svg circle:nth-child(2){
+    stroke-dashoffset: calc(440px - (440px * var(--stroke-dashoffset)) / 100);
+    stroke: #0e3449;
+}
+
+.box .percent .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.box .percent .number h2{
+    font-size: 48px;
+}
+
+.box .percent .number h2 span{
+    font-size: 24px;
+}
+
+.box .text{
+    padding: 0;
+    color: #f8f8f8;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.box button {
+    margin-top: 20px;
+    color: white;
+    padding: 9px 25px;
+    background-color: rgb(168, 182, 241);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 15px;
+}
+
+.box button:hover {
+    background-color: rgba(3, 26, 131, 0.37);
+}
+
+

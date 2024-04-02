@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    {% for x in info_quiz %}
+    <title>Teste {{x.id}}</title>
+    {% endfor %}
+    <link href="{% static 'solve_test/test_selector.css' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<form method="POST">
+{% csrf_token %}
+    <main>
+        <div class="btn">
+            <button class="button3" id="give-up-button" type="button">Desistir</button>
+        </div>
+
+        <div class="row">
+            <div class="column question-box">
+                {% for x in info_quiz %}
+                <h2>{{x.question}}</h2>
+                <p>{{x.description}}</p>
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+        <dialog class="popup" id="myModal">
+            <div class="content">
+                <div class="pop-header">
+                    <p>Deseja desistir do teste?</p>
+                </div>
+
+                <div class="btns">
+                    <button class="popup2-close" id="left-button" type="button">Cancelar</button>
+                    <button class="submit" name="quit" id="right-button" type="submit">Desistir</button>
+                </div>
+            </div>
+        </dialog>
+
+
+        {% for x in opcoes %}
+        <div class="row">
+            <div class="column checkbox">
+                {% if temp_choice == x.id %}
+                    <label class="checkbox-label">{{ x.text }}</label>
+                    <label>
+                        <input class="checkbox-box" name="item_checkbox" type="checkbox" value="{{x.id}}" checked onclick="if (this.checked) {func();}"/>
+                    </label>
+                {% else %}
+                    <label class="checkbox-label">{{ x.text }}</label>
+                    <label>
+                        <input class="checkbox-box" name="item_checkbox" type="checkbox" value="{{x.id}}" onclick="if (this.checked) {func();}" />
+                    </label>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+
+
+        <dialog class="popup2" id="myModal2">
+            <div class="content">
+                <div class="pop-header">
+                    <p>Deseja submeter as suas respostas?</p>
+                </div>
+
+                <div class="btns">
+                    <button class="popup2-close" id="left-button2" type="button">Cancelar</button>
+                    <button class="submit" name="submit-test" id="right-button2" type="submit">Submeter</button>
+                </div>
+            </div>
+        </dialog>
+
+
+        <div class="btn2">
+            {% if next_quiz == last_quiz %}
+                <button class="button" id="submit-button" type="button">Submeter</button>
+            {% else %}
+                <button class="button" id="next-button" name="next-quiz" type="submit">Seguinte</button>
+            {% endif %}
+
+            {% if previous_quiz >= 0 %}
+                <button class="button2" id="prev-button" name="prev-quiz" type="submit">Anterior</button>
+            {% endif %}
+        </div>
+
+    </main>
+
+</form>
+
+    <script src="{% static 'solve_test/test_selector.js' %}"></script>
+
+</body>
+
+</html>

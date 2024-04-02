@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    {% load static %}
+<head>
+    {% include 'favicon.html' %}
+    <title>Login</title>
+    <meta charset="UTF-8">
+	<meta content="width-device-width,initial-scale=1.0" name="viewport">
+    <link href="{% static 'users/login.css' %}?{% now 'U' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+    <form class='divLogin' method="POST">
+        {% csrf_token %}
+        <section class="registerContainer">
+            <h1 class="title">Bem vindo ao Kahuc! </h1>
+            <section class="Inputs">
+                <label for='Email Institucional'></label><input type="text" placeholder='   Email Institucional'
+                                                                class="inputLong" id='Email Institucional'
+                                                                autocomplete="on" name="username"/>
+                <section class="space"></section>
+                <label for='Palavra passe'></label><input autocomplete="on" class="inputLong" id='Palavra passe' name="password"
+                                                          placeholder='   Palavra passe' type="password"/>
+
+                <section class="space"></section>
+                <section class="space"></section>
+
+                <section class="buttonSection">
+                    <input class="registarButton" id="login-button" type="submit" value="Login">
+                </section>
+                <section class="space"></section>
+                <section class="space"></section>
+                <section class="finalText">
+                    <a class="logIn" href="{% url 'password_reset' %}">Esqueceste-te da palavra passe?</a>
+                    <p class="textAccount">
+                        Ainda não tens tem conta?
+                        <a class="logIn" href="{% url 'register' %}">
+                            Registar
+                        </a>
+                    </p>
+                </section>
+            </section>
+        </section>
+        <section class="errors">
+            {% for message in messages %}
+            <div class="container">
+                <div class="error_div">
+                    {{ message }}
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </form>
+</main>
+
+
+</body>
+
+</html>
+
+<!-- <form method="POST">
+                {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>Email:</td>
+                            <td>
+                                <input type="text" name="email">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Password:</td>
+                            <td>
+                                <input type="password" name="password">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="submit" name="submit"
+                                value="login">
+                            </td>
+
+
+                            <td>
+                                Ainda não tens conta?<a href="http://127.0.0.1:8000/users/register/">Registar</a>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <tr>
+                        <td>
+                            Perdeste a palavra passe?<a href="http://127.0.0.1:8000/users/password_reset/">Recuperar</a>
+                        </td>
+                    </tr>
+
+                <div>
+                    <label>
+                        <input name="remember_me" type="checkbox">Lembrar por 30 dias
+                    </label>
+                </div>
+                {% for message in messages %}
+                <p id="messages">{{message}}</p>
+                {% endfor %}
+                <br>
+            </form>-->

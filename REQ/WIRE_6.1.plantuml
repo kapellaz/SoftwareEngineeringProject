@@ -1,0 +1,39 @@
+
+@startuml Wire6.1
+!pragma layout smetana
+
+skinparam DefaultTextAlignment right
+skinparam RoundCorner 15
+
+<style>
+
+componentDiagram {
+  BackgroundColor #0077B6/#00B4D8
+  FontColor black
+}
+
+document {
+  BackGroundColor #0077B6/#00B4D8
+}
+
+title {
+  BackGroundColor #66ACFF
+  BorderThickness 1
+  RoundCorner 1
+}
+
+</style>
+title "\t\t\t\t\t\t\t\t__<b>NAV BAR__\t\t\t\t<i>__Nome de utilizador__ <&person>\n<i>__Logout__ <&account-login>"
+rectangle "<b><i>OS MEUS QUIZZ'S" as List #line:gray
+rectangle "QUIZZ #1 <i>\t\t\t\t\t\t\t\t\t\t\t\t\tAprovado" as Q1 #CAF0F8
+rectangle "QUIZZ #2 <i>\t\t\t\t\t\t\t\t\t\t       À espera de revisão" as Q2 #CAF0F8
+rectangle "QUIZZ #3 <i>\t\t\t\t\t\t\t\t\t\t\t\t     Incompleto" as Q3 #CAF0F8
+rectangle "QUIZZ #4 <i>\t\t\t\t\t\t\t\t\t\t\t\t\tAprovado" as Q4 #CAF0F8
+rectangle "QUIZZ #5 <i>\t\t\t\t\t\t\t\t\t\t\t\t\tAprovado" as Q5 #CAF0F8 
+
+List -[hidden]down-> Q1
+Q1 -[hidden]down-> Q2
+Q2 -[hidden]down-> Q3
+Q3 -[hidden]down-> Q4
+Q4 -[hidden]down-> Q5
+@enduml

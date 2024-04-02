@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Resultados do Teste</title>
+
+     <link href="{% static 'style.css' %}?{% now 'U' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+     <div class="score">
+        <div class="box">
+            <div class="percent">
+                <svg>
+                    <circle cx ="70" cy="70" r="70"></circle>
+                    <circle cx ="70" cy="70" r="70" style="--stroke-dashoffset: {{ perc_score }} "></circle>
+                </svg>
+                <div class="number">
+                    <h2>{{ perc_score }}<span>%</span></h2>
+                </div>
+            </div>
+            <h2 class="text">Pontuação</h2>
+            <a href="/solve_test"><button>Resolver novo teste</button></a>
+        </div>
+    </div>
+    <!-- Vai iterar pelos quizes de cada teste -->
+    {% for quiz in test.quizzes.all %}
+        <!-- Vai iterar pelas respostas do user -->
+            {% for answer in answers.all %}
+            <!-- Se o id do quiz for equivalente ao id do quiz da resposta -->
+            {% if quiz.id == answer.quiz.id %}
+                <div class="quizClass">
+                    {% if quiz is not None %}
+                    <b>Quiz # {{ forloop.parentloop.counter }} - {{ quiz.question }}</b>
+                <div class="contentBox">
+                    {% if answer.option.selection == True %}
+                    <div class="label" style="background: #00ef0c">{{ answer.option.text }}</div>
+                    {% elif answer.option.selection == False %}
+                    <div class="label" style="background: #ff0000">{{ answer.option.text }}</div>
+                    {% else %}
+                    <div class="label" style="background: #808080">Não Respondeu</div>
+                    {% endif %}
+                    {% if answer.option.selection == True or answer.option.selection == False%}
+                    <div class="content">{{ answer.option.justification }}</div>
+                    {% else %}
+                    <div class="content">Não Respondeu</div>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>

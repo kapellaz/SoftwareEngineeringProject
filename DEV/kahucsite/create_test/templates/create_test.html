@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    <meta content="width-device-width,initial-scale=1.0" name="viewport">
+
+    <link href="{% static 'create_test/style_create_test.css' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+    <title>Criação de Teste</title>
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+    <div class="toptitle">
+        <h1>Criação de Teste</h1>
+    </div>
+
+    <form class="finalcomment" method="POST">
+        {% csrf_token %}
+
+        <div class="alltags">
+            {{test_form}}
+            <input class='submit' id="sub" type="submit" value="Criar Teste">
+        </div>
+    </form>
+
+
+    {% for message in messages %}
+    <div class="alltags">
+        <p>{{message}}</p>
+
+    </div>
+    {% endfor %}
+
+
+</main>
+
+</body>
+
+
+</html>

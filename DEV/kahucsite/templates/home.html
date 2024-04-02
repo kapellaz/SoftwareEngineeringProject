@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% load static %}
+    <meta charset="UTF-8">
+	<meta content="width-device-width,initial-scale=1.0" name="viewport">
+    <link href="{% static 'homepage/homepage.css' %}" rel="stylesheet">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<main>
+    <div class="angry-grid">
+
+    <div id="item-2">&nbsp;
+      <img class ="image" src="{% static 'homepage/Kahuc.png' %}">
+            <div class="message">
+                O que podes fazer no Kahuc?
+            </div>
+    </div>
+    <div id="item-3">&nbsp;
+      {% if users|length > 0 %}
+      <div class="title_rank">
+        <p>Ranking Resolvedores!</p>
+      </div>
+      {% endif %}
+
+
+      {% if users|length > 0 %}
+      <img class ="image_crown" src="{% static 'homepage/crown.png' %}">
+      {% endif %}
+      <div class="ranking">
+        {% if users|length > 0 %}
+        <h3><img class ="image_medals" src="{% static 'homepage/medal_1.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;{{users.0.0}} {{users.0.1}}</h3>
+        {% endif %}
+        
+        {% if users|length > 1 %}
+        <h3><img class ="image_medals" src="{% static 'homepage/medal_2.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;{{users.1.0}} {{users.1.1}}</h3>
+        {% endif %}
+
+        {% if users|length > 2 %}
+        <h3><img class ="image_medals" src="{% static 'homepage/medal_3.png' %}">&nbsp;&nbsp;&nbsp;&nbsp;{{users.2.0}} {{users.2.1}}</h3>
+        {% endif %}
+          <div class="button_rank">
+            <form action="/halloffame/quiz">
+                <button class="button">Rankings</button>
+            </form>
+            </div>
+      </div>
+    </div>
+    <div id="item-4">&nbsp;
+      <div onclick="modal.showModal()" class = "border_buttons">
+          <h2>&nbsp;&nbsp;&nbsp;<img class ="img_size" src="{% static 'homepage/cria.png' %}" >&nbsp;Cria!</h2>
+      </div>
+        <dialog class="create_menu">
+            <div class="pop-header">
+						<p>O que deseja criar?</p>
+					</div>
+
+              <button class="state" onclick="location.href = '/createquiz/';">Quiz</button>
+              <button class="state" onclick="location.href = '/create_test/';">Teste</button>
+                <button id="close-pop-up" onclick="modal.close()">Fechar</button>
+        </dialog>
+    </div>
+    <div id="item-5">&nbsp;
+      <div class="border_buttons">
+        <a href="/review_quiz/list_quizzes_waiting_for_approval/" style="text-decoration: none;">
+            <h2>&nbsp;&nbsp;&nbsp;<img class ="img_size" src="{% static 'homepage/reve.png' %}" >&nbsp;&nbsp;Revê!</h2>
+        </a>
+      </div>
+    </div>
+    <div id="item-6">&nbsp;
+      <div class="border_buttons">
+        <a href="/solve_test/" style="text-decoration: none;">
+            <h2>&nbsp;&nbsp;<img class ="img" src="{% static 'homepage/resolve.png' %}" >&nbsp;Resolve!</h2>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+<script>
+    var modal = document.querySelector("dialog")
+</script>
+
+</html>

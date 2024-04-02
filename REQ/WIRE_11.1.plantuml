@@ -1,0 +1,46 @@
+@startuml
+skinparam DefaultTextAlignment right
+skinparam RectangleBorderColor black
+skinparam Margin 10
+skinparam RoundCorner 15
+
+skinparam titleBorderRoundCorner 1
+skinparam titleBorderThickness 1
+skinparam titleBorderColor #DDDDDD
+skinparam titleBackgroundColor #DDDDDD
+
+skinparam rectangle{
+  BorderColor Black
+  RoundCorne 15
+}
+
+title "\t LOGO\t\t\tPágina inicial   Sobre Nós   Nome de utilizador"
+
+rectangle "Criação de Teste" as CT#FFF
+
+
+rectangle "Introduza o Título                                                         \n\n PM:[]   REQ:[]   A&D:[]   IMP:[]   V&V:[]   DEP:[]   CI:[]   PRC:[]   PPL:[]   CCM:[]   RSK:[]  \n\n\n                                                     <b>Criar Teste                                                 " as teste#1D4F8A
+
+rectangle "<i> mensagem de erro ou sucesso com respetivos detalhes" as msg#1D4F8A
+
+
+CT -[hidden]->teste
+teste -[hidden]->msg
+
+<style>
+componentDiagram {
+  BackgroundColor #03045E
+  FontColor black
+}
+document {
+  BackGroundColor #0077B6/#00B4D8
+}
+title {
+  BackGroundColor #66ACFF
+  BorderColor black
+  BorderThickness 1
+  RoundCorner 1
+}
+
+</style>
+@enduml

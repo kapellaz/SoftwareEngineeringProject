@@ -1,0 +1,184 @@
+<html lang="pt-pt">
+{% load static %}
+
+<head>
+    {% include 'favicon.html' %}
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <meta content="width-device-width,initial-scale=1.0" name="viewport">
+    <link href="{% static 'global.css' %}" rel="stylesheet">
+    <link href="{% static 'homepage/homepage.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'users/profile.css' %}?{% now 'U' %}">
+    
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="upDivs">
+        <div class="div1">
+            <h1> Revisão de Quizzes </h1>
+            
+            <section class="metrica1">
+                <section class="single-chart">
+                    <svg viewBox="0 0 36 36" class="circular-chart blue">
+                        <path class="circle2" stroke-dasharray="100, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle9" stroke-dasharray="{{approved}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentage1"></text>
+
+                    </svg>
+
+                </section>
+
+                <section class="tags">
+                    <div class="tag">
+                        <div class="square" id="square9"></div>
+                        <p>Aprovados {{approved}}%</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square2"></div>
+                        <p class="aprovacao">Por Aprovar {{not_reviewed}}% </p>
+                    </div>
+                </section>
+                
+                <section class="sectionButtons">
+                    
+                    <form action="/historic_quiz/">
+                    </form>
+                    <form action="/historic_quiz/">
+                        <button class="Button">Os meus quizzes</button>
+                    </form>
+                    <form action="/users/importxml/">
+                        <button class="buttons">Importar quiz</button>
+                    </form>
+                    <form action="/createquiz/export_xml/">
+                        <button class="buttons">Exportar quiz</button>
+                    </form>
+                </section>
+
+            </section>
+        </div>
+    </div>
+    <div class="upDivs2">
+        <div class="div2">
+            <h1> Avaliação</h1>
+            <section class="metrica2">
+                <section class="single-chart">
+
+                    <svg viewBox="0 0 36 36" class="circular-chart blue">
+                        <path class="circle0" stroke-dasharray="100, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle1" stroke-dasharray="{{percentagem_tags.11}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle2" stroke-dasharray="{{percentagem_tags.10}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle3" stroke-dasharray="{{percentagem_tags.9}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle4" stroke-dasharray="{{percentagem_tags.8}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle5" stroke-dasharray="{{percentagem_tags.7}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle6" stroke-dasharray="{{percentagem_tags.6}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle7" stroke-dasharray="{{percentagem_tags.5}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle8" stroke-dasharray="{{percentagem_tags.4}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle9" stroke-dasharray="{{percentagem_tags.3}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle10" stroke-dasharray="{{percentagem_tags.2}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle11" stroke-dasharray="{{percentagem_tags.1}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle12" stroke-dasharray="{{percentagem_tags.0}}, 100" d="M18 2.0845
+                        a 15.9155 15.9155 0 0 1 0 31.831
+                        a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                </section>
+                <section class="tags">
+                    <div class="tag">
+                        <div class="square" id="square1"></div>
+                        <p>{{tag.0}} {{correct_answers.0.1}} de {{all_answers.1}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square2"></div>
+                        <p>{{tag.1}} {{correct_answers.1.1}} de {{all_answers.2}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square3"></div>
+                        <p>{{tag.2}} {{correct_answers.2.1}} de {{all_answers.3}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square4"></div>
+                        <p>{{tag.3}} {{correct_answers.3.1}} de {{all_answers.4}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square5"></div>
+                        <p>{{tag.4}} {{correct_answers.4.1}} de {{all_answers.5}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square6"></div>
+                        <p>{{tag.5}} {{correct_answers.5.1}} de {{all_answers.6}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square7"></div>
+                        <p>{{tag.6}} {{correct_answers.6.1}} de {{all_answers.7}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square8"></div>
+                        <p>{{tag.7}} {{correct_answers.7.1}} de {{all_answers.8}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square9"></div>
+                        <p>{{tag.8}} {{correct_answers.8.1}} de {{all_answers.9}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square10"></div>
+                        <p>{{tag.9}} {{correct_answers.9.1}} de {{all_answers.10}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square11"></div>
+                        <p>{{tag.10}} {{correct_answers.10.1}} de {{all_answers.11}}</p>
+                    </div>
+
+                    <div class="tag">
+                        <div class="square" id="square12"></div>
+                        <p>{{tag.11}} {{correct_answers.11.1}} de {{all_answers.12}}</p>
+                    </div>
+
+                </section>
+        </section>
+    </div>
+    </div>
+    
+</body>
+
+</html>
